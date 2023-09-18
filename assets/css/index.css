@@ -2,15 +2,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 body {
-    width: 100%
+    width: 100%;
+    height: 100vh;
 }
 .container {
     margin: 0 auto;
     background-image: url('../images/bg.jpg');
+    background-size: contain;
+    height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
     font-family: 'Inter', sans-serif;
+}
+
+.title{
+    height: 200px;
+    width: 1000px;
 }
 
 img {
@@ -66,7 +74,6 @@ section {
 }
 
 #btn {
-    
     float: right;
 }
 button {
