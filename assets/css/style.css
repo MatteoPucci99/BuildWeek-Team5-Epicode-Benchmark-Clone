@@ -1,0 +1,36 @@
+#questions {
+  width: 900px;
+  margin: 0 auto;
+  background-color: blueviolet;
+  color: white;
+  text-align: center;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked + label {
+  background-color: green;
+}
+
+.container h1 {
+  text-align: center;
+  font-size: 2em;
+}
+
+.answer-text {
+  border: 1px solid black;
+  display: inline-block;
+  width: 400px;
+  margin: 20px;
+}
+
+#form {
+  text-align: end;
+}
+
+button {
+  margin: 20px;
+  width: 90px;
+}
