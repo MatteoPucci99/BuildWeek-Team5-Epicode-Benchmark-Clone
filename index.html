@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome</title>
     <link rel="stylesheet" href="/assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/index.css" />
   </head>
   <body>
     <div class="container">
@@ -18,7 +19,7 @@
           <h2>Instructions</h2>
           <p>
             We don't expect most engineers to know the answers to all of these
-            questions, so don't worry if you're unsure of a few of them
+            questions, so don't worry if you're unsure of a few of them.
           </p>
         </div>
         <div>
@@ -34,15 +35,17 @@
             <li>This exam will take approx. <span>0-5 minutes</span></li>
           </ul>
         </div>
-        <div>
-          <input type="checkbox" id="checkbox" />
-          <label for="checkbox"
-            >I promise to answer myself without help from anyone</label
-          >
-        </div>
-        <div>
-          <button type="submit">PROCEED</button>
-        </div>
+        <section>
+          <div id="check">
+            <input type="checkbox" id="checkbox" />
+            <label for="checkbox"
+              >I promise to answer myself without help from anyone</label
+            >
+          </div>
+          <div id="btn">
+            <button type="submit">PROCEED</button>
+          </div>
+        </section>
       </main>
     </div>
   </body>
