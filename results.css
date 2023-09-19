@@ -66,3 +66,11 @@ display:flex;
     text-align: center;
     margin-bottom: 27px;
 }
+
+.titleInsideCircle h3 span {
+    color: #00FFFF;
+}
+
+footer button {
+    margin-left: 45%;
+}

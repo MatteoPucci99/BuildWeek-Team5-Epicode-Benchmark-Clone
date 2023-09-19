@@ -1,0 +1,8 @@
+body {
+    background-image: url(assets/images/bg.jpg);
+    background-size: cover;
+}
+
+header img {
+    height: 2em;
+}
