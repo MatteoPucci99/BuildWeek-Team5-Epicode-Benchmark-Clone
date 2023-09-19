@@ -11,7 +11,7 @@ const questions = [
       "Central Processor Unit",
     ],
     answer: [
-      "Centrale Processing Unit",
+      "Central Processing Unit",
       "Central Process Unit",
       "Computer Personal Unit",
       "Central Processor Unit",
@@ -22,7 +22,7 @@ const questions = [
     type: "multiple",
     difficulty: "easy",
     question:
-      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
+      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
     correct_answer: "Final",
     incorrect_answers: ["Static", "Private", "Public"],
     answer: ["Final", "Static", "Private", "Public"],
@@ -34,7 +34,7 @@ const questions = [
     question: "The logo for Snapchat is a Bell.",
     correct_answer: "False",
     incorrect_answers: ["True"],
-    answer: ["True", "False"],
+    answer: ["False", "True"],
   },
   {
     category: "Science: Computers",
@@ -44,7 +44,7 @@ const questions = [
       "Pointers were not used in the original C programming language; they were added later on in C++.",
     correct_answer: "False",
     incorrect_answers: ["True"],
-    answer: ["True", "False"],
+    answer: ["False", "True"],
   },
   {
     category: "Science: Computers",
@@ -100,7 +100,7 @@ const questions = [
     question: "Linux was first created as an alternative to Windows XP.",
     correct_answer: "False",
     incorrect_answers: ["True"],
-    answer: ["True", "False"],
+    answer: ["False", "True"],
   },
   {
     category: "Science: Computers",
@@ -114,94 +114,118 @@ const questions = [
   },
 ];
 
-let score = 0;
+// INDICE ELEMENTI
 let questionCounter = 0;
+let score = 0;
+let avaibleQuestions = [];
+const questionTitle = document.getElementById("main-question");
+const par = Array.from(document.getElementsByClassName("cards-text"));
+const button = document.getElementById("button");
+const div = Array.from(document.getElementsByClassName("cards"));
+const counter = document.getElementById("counter");
+let myAnswer = "";
 
-const div = document.getElementById("questions");
-const answerLabels = Array.from(document.getElementsByClassName("answer-text"));
-const answerInputs = Array.from(document.getElementsByClassName("answer"));
+// RESET DEL FORM
+// const preventDefaultButton = document.getElementById("form");
+// preventDefaultButton.addEventListener("click", (e) => {
+//   e.preventDefault();
+// });
 
-const question = document.getElementById("question");
-
-const form = document.getElementById("form");
-form.addEventListener("click", (e) => {
-  e.preventDefault();
-});
-
-const displayQuestionCounter = () => {
-  const questionDisplay = document.getElementById("questionDisplay");
-  questionDisplay.innerText = `Question ${questionCounter}/10`;
-};
-// Funzione per far comparire la prima domanda
-const startQuestionnaire = () => {
-  // console.log(answerLabels);
-  // question.innerText = questions[0].question;
+// STARTING POINT
+const startTest = () => {
+  let questionCounter = 0;
+  let score = 0;
+  // avaibleQuestions = [...questions];
+  // questionTitle.innerText = questions[0].question;
   // questions.splice(0, 1);
-  // questionCounter++;
-  // console.log(questions);
-  displayQuestionCounter();
   newQuestion();
 };
 
-// Funzione che controlla quale radio input è stato selezionato
-
-// const checkAnswer = (answersLength) => {
-//   for (let i = 0; i < answersLength; i++) {
-//     const answer = answerInputs[i];
-//     if (answer.checked) {
-//       console.log(answer.value);
-//     }
-//   }
-// };
-
-// Funzione per far comparire le altre domande
-// Sceglie un random number che va da 0 fino alla lunghezza dell'array question.
+// NEW QUESTION FUNCTION
 const newQuestion = () => {
-  const randomQuestIndex = Math.floor(Math.random() * questions.length);
-  question.innerText = questions[randomQuestIndex].question;
+  const randomIndex = Math.floor(Math.random() * questions.length);
+  questionTitle.innerText = questions[randomIndex].question;
+  arrayNumbers = [];
 
-  const random0to3 = Math.floor(Math.random() * 4);
-  const random0to2 = Math.floor(Math.random() * 3);
-  const random0to1 = Math.floor(Math.random() * 2);
+  // AD OGNI CLICK MI RIPRISTINA TUTTE LE CASELLE
+  for (let i = 0; i < div.length; i++) {
+    div[i].style.visibility = "visible";
+  }
 
-  const answers = questions[randomQuestIndex].answer;
-  // checkAnswer(answers.length);
+  // CICLO WHILE PER GENERARE NUMERI RANDOM TUTTI DIVERSI
+  while (arrayNumbers.length < 4) {
+    const parIndex = Math.floor(Math.random() * 4);
+    if (arrayNumbers.indexOf(parIndex) === -1) {
+      arrayNumbers.push(parIndex);
+    }
 
-  //   Se è una domanda con risposta vero e falso nascondiamo due input altrimenti mostriamo 4 input.
-  if (questions[randomQuestIndex].answer.length === 2) {
-    answerLabels[2].style.display = "none";
-    answerLabels[3].style.display = "none";
-    answerLabels[0].innerText = questions[randomQuestIndex].answer[0];
-    answerLabels[1].innerText = questions[randomQuestIndex].answer[1];
-  } else {
-    answerLabels[3].style.display = "inline-block";
-    answerLabels[2].style.display = "inline-block";
-    // answerLabels[0].innerText = questions[randomNumber].answer[random0to3];
-    // questions[randomNumber].answer.splice(random0to3, 1);
-    // answerLabels[1].innerText = questions[randomNumber].answer[random0to2];
-    // questions[randomNumber].answer.splice(random0to2, 1);
-    // answerLabels[2].innerText = questions[randomNumber].answer[random0to1];
-    // questions[randomNumber].answer.splice(random0to1, 1);
-    // answerLabels[3].innerText = questions[randomNumber].answer[0];
-    // questions.splice(randomNumber, 1);
-    const answersNum = answers.length;
-    for (let i = 0; i < answersNum; i++) {
-      console.log("ok", answers.length);
-      const randomAnswerIndex = Math.floor(Math.random() * answers.length);
-      answerLabels[i].innerText = answers[randomAnswerIndex];
-      answers.splice(randomAnswerIndex, 1);
+    // CICLI FOR PER RANDOMIZZARE LE RISPOSTE DENTRO LE CASELLE
+    for (let i = 0; i < questions[randomIndex].answer.length; i++) {
+      for (let j = 0; j < arrayNumbers.length; j++) {
+        for (k = 0; k < par.length; k++) {
+          if (i === arrayNumbers[j] && j === k) {
+            par[k].innerText = questions[randomIndex].answer[i];
+          }
+        }
+      }
     }
   }
-  questions.splice(randomQuestIndex, 1);
-  questionCounter++;
 
-  console.log(questions);
-  if (questionCounter === 10) {
-    console.log("Domande finite");
+  // IF STATEMENT PER NASCONDERE LE ULTIME DUE CASELLE IN CASO DI TRUE/FALSE
+  if (questions[randomIndex].type === "boolean") {
+    par[0].innerText = "True";
+    par[1].innerText = "False";
+    div[2].style.visibility = "hidden";
+    div[3].style.visibility = "hidden";
   }
-  displayQuestionCounter();
+
+  const correctAnswer = questions[randomIndex].correct_answer;
+  myAnswer = correctAnswer;
+  console.log("La risposta giusta è: ", correctAnswer);
+
+  // AGGIUNGIAMO FUNZIONE PER IL CLICK AD OGNI PARAGRAFO
+  // par.forEach((el) => {
+  //   el.addEventListener("click", (e) => {
+  //     // console.log(e.target.innerText);
+  //     // console.log(randomIndex);
+  //     // console.log(questions[randomIndex].correct_answer);
+
+  //     if (e.target.innerText === correctAnswer) {
+  //       console.log("Trovato");
+  //       score++;
+  //     }
+  //     console.log(e.target.innerText, "Eccolo");
+  //     console.log("ciao");
+  //   });
+  // });
+
+  questionCounter++;
+  counter.innerText = `${questionCounter}/10`;
+
+  questions.splice(randomIndex, 1);
+
+  console.log("Questo è il tuo punteggio: ", score);
+  // console.log(randomIndex);
+  // console.log(par);
+  // console.log(questions);
+  // console.log(arrayNumbers);
+  console.log("Question counter: ", questionCounter);
+  if (questionCounter === 10) {
+    document.location.href = "../results.html";
+  }
 };
 
-startQuestionnaire();
-const button = document.getElementById("next");
-button.addEventListener("click", newQuestion);
+div.forEach((el) => {
+  el.addEventListener("click", (e) => {
+    if (e.target.innerText === myAnswer) {
+      score++;
+      newQuestion();
+    } else {
+      newQuestion();
+    }
+    // console.log(e.target, "ciao");
+  });
+});
+// button.addEventListener("click", newQuestion);
+
+startTest();
