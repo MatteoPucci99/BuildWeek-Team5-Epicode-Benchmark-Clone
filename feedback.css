@@ -1,0 +1,32 @@
+body {
+  background-image: url(assets/images/bg.jpg);
+  background-size: cover;
+}
+
+header img {
+  height: 2em;
+}
+
+.rating {
+  width: 700px;
+  margin: auto;
+}
+
+i {
+  color: #02030d;
+  font-size: 2em;
+}
+
+.lit {
+  color: #00ffff;
+}
+
+/* Se vogliamo aggiungere l'hover effect */
+
+/* .rating:hover .fa-solid:before {
+  color: #00ffff;
+}
+
+.rating > .fa-solid:hover ~ .fa-solid:before {
+  color: #02030d;
+} */
