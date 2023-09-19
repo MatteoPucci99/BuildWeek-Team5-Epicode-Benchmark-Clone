@@ -113,6 +113,8 @@ const questions = [
     answer: ["Java", "Python", "C", "Jakarta"],
   },
 ];
+
+// INDICE ELEMENTI
 let questionCounter = 0;
 let score = 0;
 let avaibleQuestions = [];
@@ -122,11 +124,13 @@ const button = document.getElementById("button");
 const div = Array.from(document.getElementsByClassName("cards"));
 const counter = document.getElementById("counter");
 
+// RESET DEL FORM
 const preventDefaultButton = document.getElementById("form");
 preventDefaultButton.addEventListener("click", (e) => {
   e.preventDefault();
 });
 
+// STARTING POINT
 const startTest = () => {
   questionCounter = 0;
   score = 0;
@@ -136,20 +140,25 @@ const startTest = () => {
   newQuestion();
 };
 
+// NEW QUESTION FUNCTION
 const newQuestion = () => {
   const randomIndex = Math.floor(Math.random() * questions.length);
   questionTitle.innerText = questions[randomIndex].question;
   arrayNumbers = [];
 
+  // AD OGNI CLICK MI RIPRISTINA TUTTE LE CASELLE
   for (let i = 0; i < div.length; i++) {
     div[i].style.visibility = "visible";
   }
 
+  // CICLO WHILE PER GENERARE NUMERI RANDOM TUTTI DIVERSI
   while (arrayNumbers.length < 4) {
     const parIndex = Math.floor(Math.random() * 4);
     if (arrayNumbers.indexOf(parIndex) === -1) {
       arrayNumbers.push(parIndex);
     }
+
+    // CICLI FOR PER RANDOMIZZARE LE RISPOSTE DENTRO LE CASELLE
     for (let i = 0; i < questions[randomIndex].answer.length; i++) {
       for (let j = 0; j < arrayNumbers.length; j++) {
         for (k = 0; k < par.length; k++) {
@@ -160,6 +169,8 @@ const newQuestion = () => {
       }
     }
   }
+
+  // IF STATEMENT PER NASCONDERE LE ULTIME DUE CASELLE IN CASO DI TRUE/FALSE
   if (questions[randomIndex].type === "boolean") {
     par[0].innerText = "True";
     par[1].innerText = "False";
@@ -167,14 +178,33 @@ const newQuestion = () => {
     div[3].style.visibility = "hidden";
   }
 
+  const correctAnswer = questions[randomIndex].correct_answer;
+  console.log(correctAnswer);
+
+  // AGGIUNGIAMO FUNZIONE PER IL CLICK AD OGNI PARAGRAFO
+  par.forEach((el) => {
+    el.addEventListener("click", (e) => {
+      // console.log(e.target.innerText);
+      // console.log(randomIndex);
+      // console.log(questions[randomIndex].correct_answer);
+
+      if (e.target.innerText === correctAnswer) {
+        console.log("Trovato");
+        score++;
+      }
+    });
+  });
+
   questionCounter++;
   counter.innerText = `${questionCounter}/10`;
 
-  console.log(randomIndex);
-  console.log(par);
   questions.splice(randomIndex, 1);
-  console.log(questions);
-  console.log(arrayNumbers);
+
+  console.log(score, "Questo è il tuo punteggio");
+  // console.log(randomIndex);
+  // console.log(par);
+  // console.log(questions);
+  // console.log(arrayNumbers);
   console.log(questionCounter, "Question counter");
 };
 
