@@ -12,9 +12,9 @@ if (progressEndValue == 0) {
     progressStartValue++;
 
     progressValue.textContent = `${progressStartValue}%`;
-    circularProgression.style.background = `conic-gradient(#ff00d9 ${
+    circularProgression.style.background = `conic-gradient(hsl(318.07deg 83.02% 41.57%) ${
       progressStartValue * 3.6
-    }deg, #ededed 0deg)`;
+    }deg, hsl(180deg 100% 50%) 0deg)`;
 
     if (progressStartValue == progressEndValue) {
       clearInterval(progress);

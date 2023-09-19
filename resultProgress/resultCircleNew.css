@@ -23,6 +23,8 @@ body{
     flex-direction: column;
     align-items: center;
 }
+
+
 .circular-progress{
     position: relative;
     height: 270px;
@@ -34,6 +36,8 @@ body{
     align-items: center;
     justify-content: center;
 }
+
+
 .circular-progress::before{
     content: "";
     position: absolute;
