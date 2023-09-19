@@ -32,3 +32,4 @@ if (progressEndValue == 0) {
     }
   }, speed);
 }
+
