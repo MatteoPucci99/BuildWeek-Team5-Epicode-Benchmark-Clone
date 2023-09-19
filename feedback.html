@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/css/reset.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <img src="assets/images/epicode_logo.png" alt="epicode_logo" />
+      </header>
+      <main>
+        <h1>Tell us how it's going</h1>
+        <h3>
+          From 0 to 10, how likely are you to racommend EPICODE<br />to a friend
+          or a colleague?
+        </h3>
+        <div class="pform">
+          <p>Leave us an open feedback about your experience so far</p>
+        </div>
+        <div class="comment">
+          <textarea
+            type="text"
+            class="input"
+            placeholder="Write a comment"
+            v-model="newItem"
+            @keyup.enter="addItem()"
+          ></textarea>
+          <button type="button">MORE INFO</button>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

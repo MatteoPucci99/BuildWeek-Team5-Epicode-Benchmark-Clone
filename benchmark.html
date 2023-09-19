@@ -10,16 +10,42 @@
   <body>
     <div class="container">
       <header>
-      <img src="assets/images/epicode_logo.png" alt="epicode logo" />
-    </header>
-    <main>
-      <div>
-        <!-- inserire countdown con js -->
-      </div>
-      <div>
-        <!-- inserire box domande con js-->
-      </div>
+        <img src="assets/images/epicode_logo.png" alt="epicode logo" />
+      </header>
+      <main>
+        <div>
+          <!-- inserire countdown con js -->
+        </div>
+
+        <div id="questions">
+          <h1 id="question">Ciao</h1>
+          <div>
+            <input id="answer-1" type="radio" name="answers" class="answer" />
+            <label class="answer-text" for="answer-1"></label>
+          </div>
+          <div>
+            <input id="answer-2" type="radio" name="answers" class="answer" />
+            <label class="answer-text" for="answer-2"></label>
+          </div>
+          <div>
+            <input id="answer-3" type="radio" name="answers" class="answer" />
+            <label class="answer-text" for="answer-3"></label>
+          </div>
+          <div>
+            <input id="answer-4" type="radio" name="answers" class="answer" />
+            <label class="answer-text" for="answer-4"></label>
+          </div>
+        </div>
+        <div>
+          <form id="form">
+            <button id="next">Next</button>
+          </form>
+        </div>
+        <div>
+          <p id="questionDisplay"></p>
+        </div>
+      </main>
     </div>
-    </main>
+    <script src="script/questions.js"></script>
   </body>
 </html>
