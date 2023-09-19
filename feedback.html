@@ -20,35 +20,40 @@
         <img src="assets/images/epicode_logo.png" alt="epicode_logo" />
       </header>
       <main>
-        <h1>Tell us how it's going</h1>
-        <h3>
-          From 0 to 10, how likely are you to racommend EPICODE<br />to a friend
-          or a colleague?
-        </h3>
-        <div class="rating">
-          <i id="1" class="fa-solid fa-star"></i>
-          <i id="2" class="fa-solid fa-star"></i>
-          <i id="3" class="fa-solid fa-star"></i>
-          <i id="4" class="fa-solid fa-star"></i>
-          <i id="5" class="fa-solid fa-star"></i>
-          <i id="6" class="fa-solid fa-star"></i>
-          <i id="7" class="fa-solid fa-star"></i>
-          <i id="8" class="fa-solid fa-star"></i>
-          <i id="9" class="fa-solid fa-star"></i>
-          <i id="10" class="fa-solid fa-star"></i>
-        </div>
-        <div class="pform">
-          <p>Leave us an open feedback about your experience so far</p>
-        </div>
-        <div class="comment">
-          <textarea
-            type="text"
-            class="input"
-            placeholder="Write a comment"
-            v-model="newItem"
-            @keyup.enter="addItem()"
-          ></textarea>
-          <button type="button">MORE INFO</button>
+        <div class="text-container">
+          <h1>Tell us how it's going</h1>
+          <h3>
+            From 0 to 10, how likely are you to racommend EPICODE<br />to a
+            friend or a colleague?
+          </h3>
+          <div class="rating">
+            <i id="1" class="fa-solid fa-star"></i>
+            <i id="2" class="fa-solid fa-star"></i>
+            <i id="3" class="fa-solid fa-star"></i>
+            <i id="4" class="fa-solid fa-star"></i>
+            <i id="5" class="fa-solid fa-star"></i>
+            <i id="6" class="fa-solid fa-star"></i>
+            <i id="7" class="fa-solid fa-star"></i>
+            <i id="8" class="fa-solid fa-star"></i>
+            <i id="9" class="fa-solid fa-star"></i>
+            <i id="10" class="fa-solid fa-star"></i>
+          </div>
+          <div class="pform">
+            <h3>Leave us an open feedback about your experience so far</h3>
+          </div>
+          <div class="comment-container">
+            <div class="comment">
+              <p>Write your comment here</p>
+              <!-- <textarea
+              type="text"
+              class="input"
+              placeholder="Write a comment"
+              v-model="newItem"
+              @keyup.enter="addItem()"
+            ></textarea> -->
+            </div>
+            <div id="info">MORE INFO</div>
+          </div>
         </div>
       </main>
     </div>
