@@ -120,6 +120,7 @@ const questionTitle = document.getElementById("main-question");
 const par = Array.from(document.getElementsByClassName("cards-text"));
 const button = document.getElementById("button");
 const div = Array.from(document.getElementsByClassName("cards"));
+const counter = document.getElementById("counter");
 
 const preventDefaultButton = document.getElementById("form");
 preventDefaultButton.addEventListener("click", (e) => {
@@ -141,7 +142,7 @@ const newQuestion = () => {
   arrayNumbers = [];
 
   for (let i = 0; i < div.length; i++) {
-    div[i].style.display = "inline-block";
+    div[i].style.visibility = "visible";
   }
 
   while (arrayNumbers.length < 4) {
@@ -162,15 +163,19 @@ const newQuestion = () => {
   if (questions[randomIndex].type === "boolean") {
     par[0].innerText = "True";
     par[1].innerText = "False";
-    div[2].style.display = "none";
-    div[3].style.display = "none";
+    div[2].style.visibility = "hidden";
+    div[3].style.visibility = "hidden";
   }
+
+  questionCounter++;
+  counter.innerText = `${questionCounter}/10`;
+
   console.log(randomIndex);
   console.log(par);
   questions.splice(randomIndex, 1);
-
   console.log(questions);
   console.log(arrayNumbers);
+  console.log(questionCounter, "Question counter");
 };
 
 button.addEventListener("click", newQuestion);
