@@ -16,7 +16,6 @@ body {
 }
 .skill {
   background-image: url(./assets/bg.jpg);
-
   width: 160px;
   height: 160px;
   position: relative;
@@ -26,15 +25,17 @@ body {
   height: 160px;
   border-radius: 50%;
   /* border: 1px solid red; */
-  /* background-color: azure; */
+  /* border: 20px solid azure; */
   padding: 20px;
   box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
     -6px -6px 10px -1px rgba(0, 0, 0, 0.7);
 }
+
 .inner {
   width: 120px;
   height: 120px;
   border-radius: 50%;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,12 +46,12 @@ body {
 #number {
   color: #ffffff;
   text-align: center;
-
   font-weight: 600;
 }
 circle {
   fill: none;
-  stroke: #d20094;
+  stroke: #00ffff;
+  /* stroke: #d20094; */
   stroke-width: 20px;
   stroke-dasharray: 440;
   stroke-dashoffset: 440;
@@ -70,5 +71,6 @@ h3 {
   font-size: 0.7em;
 }
 h2 {
-  font-size: 1.8em;
+  font-size: 2.5em;
+  padding: 3px;
 }
