@@ -129,12 +129,11 @@ preventDefaultButton.addEventListener("click", (e) => {
 const startTest = () => {
   questionCounter = 0;
   score = 0;
-  avaibleQuestions = [...questions];
-  questionTitle.innerText = questions[0].question;
+  // avaibleQuestions = [...questions];
+  // questionTitle.innerText = questions[0].question;
   // questions.splice(0, 1);
+  newQuestion();
 };
-
-startTest();
 
 const newQuestion = () => {
   const randomIndex = Math.floor(Math.random() * questions.length);
@@ -175,3 +174,5 @@ const newQuestion = () => {
 };
 
 button.addEventListener("click", newQuestion);
+
+startTest();
