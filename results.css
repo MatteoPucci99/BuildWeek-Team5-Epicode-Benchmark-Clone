@@ -1,5 +1,5 @@
  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
-
+ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400;700&display=swap');
 
 
 
@@ -20,7 +20,9 @@ main {
 }
 
 header img {
-    height: 2em;
+    width: 15%;
+    margin-left: 6em;
+    margin-top: 2.5em;
 }
 
 #title {
@@ -61,6 +63,9 @@ justify-content: center;
 
 .pInsideCircle p {
     font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+    line-height: 1.2em
 }
 
 .textInsideCircle {
@@ -73,5 +78,7 @@ justify-content: center;
 }
 
 footer button {
-    margin-left: 45%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
