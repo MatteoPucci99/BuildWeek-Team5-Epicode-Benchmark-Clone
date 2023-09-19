@@ -123,6 +123,7 @@ const par = Array.from(document.getElementsByClassName("cards-text"));
 const button = document.getElementById("button");
 const div = Array.from(document.getElementsByClassName("cards"));
 const counter = document.getElementById("counter");
+let myAnswer = "";
 
 // RESET DEL FORM
 const preventDefaultButton = document.getElementById("form");
@@ -132,8 +133,8 @@ preventDefaultButton.addEventListener("click", (e) => {
 
 // STARTING POINT
 const startTest = () => {
-  questionCounter = 0;
-  score = 0;
+  let questionCounter = 0;
+  let score = 0;
   // avaibleQuestions = [...questions];
   // questionTitle.innerText = questions[0].question;
   // questions.splice(0, 1);
@@ -179,22 +180,26 @@ const newQuestion = () => {
   }
 
   const correctAnswer = questions[randomIndex].correct_answer;
+  myAnswer = correctAnswer;
   console.log(correctAnswer);
 
   // AGGIUNGIAMO FUNZIONE PER IL CLICK AD OGNI PARAGRAFO
-  par.forEach((el) => {
-    el.addEventListener("click", (e) => {
-      // console.log(e.target.innerText);
-      // console.log(randomIndex);
-      // console.log(questions[randomIndex].correct_answer);
+  // par.forEach((el) => {
+  //   el.addEventListener("click", (e) => {
+  //     // console.log(e.target.innerText);
+  //     // console.log(randomIndex);
+  //     // console.log(questions[randomIndex].correct_answer);
 
-      if (e.target.innerText === correctAnswer) {
-        console.log("Trovato");
-        score++;
-      }
-    });
-  });
+  //     if (e.target.innerText === correctAnswer) {
+  //       console.log("Trovato");
+  //       score++;
+  //     }
+  //     console.log(e.target.innerText, "Eccolo");
+  //     console.log("ciao");
+  //   });
+  // });
 
+  console.log(myAnswer, "ABC");
   questionCounter++;
   counter.innerText = `${questionCounter}/10`;
 
@@ -208,6 +213,20 @@ const newQuestion = () => {
   console.log(questionCounter, "Question counter");
 };
 
-button.addEventListener("click", newQuestion);
+par.forEach((el) => {
+  el.addEventListener("click", (e) => {
+    if (e.target.innerText === myAnswer) {
+      score++;
+      newQuestion();
+    } else {
+      newQuestion();
+    }
+  });
+});
+// button.addEventListener("click", newQuestion);
 
 startTest();
+
+if (questionCounter === 10) {
+  document.location.href = "../results.html";
+}
