@@ -124,6 +124,35 @@ const button = document.getElementById("button");
 const div = Array.from(document.getElementsByClassName("cards"));
 const counter = document.getElementById("counter");
 let myAnswer = "";
+const circle = document.getElementsByTagName("circle")[0];
+console.log(circle);
+let number = document.getElementsByTagName("h2")[0];
+let circularProgression = document.querySelector(".circular-progress");
+let progressValue = document.querySelector(".progress-value");
+
+let timerCounter = 30;
+const deleteOne = 1;
+
+// let timerCounter = 30;
+// const deleteOne = 1;
+
+// TIMER FUNCTION
+
+const timer = () => {
+  setInterval(() => {
+    if (timerCounter === 0) {
+      timerCounter = 30;
+      newQuestion();
+    } else {
+      timerCounter -= deleteOne;
+      progressValue.innerHTML = `<p class='count-down'>SECONDS</p> ${timerCounter} <p class='count-down'>REMAINING</p>`;
+      circularProgression.style.background = `conic-gradient(hsl(180deg 100% 50%)
+     ${timerCounter * 12}deg, hsl(0, 0%, 87%) 0deg)`;
+    }
+  }, 1000);
+};
+
+timer();
 
 // RESET DEL FORM
 // const preventDefaultButton = document.getElementById("form");
@@ -143,6 +172,10 @@ const startTest = () => {
 
 // NEW QUESTION FUNCTION
 const newQuestion = () => {
+  if (questionCounter === 10) {
+    return;
+  }
+
   const randomIndex = Math.floor(Math.random() * questions.length);
   questionTitle.innerText = questions[randomIndex].question;
   arrayNumbers = [];
@@ -200,7 +233,8 @@ const newQuestion = () => {
   // });
 
   questionCounter++;
-  counter.innerText = `${questionCounter}/10`;
+  counter.innerHTML = `QUESTION ${questionCounter}<span id=change>/10</span>`;
+  document.getElementById("change").style.color = "rgb(178,0,136)";
 
   questions.splice(randomIndex, 1);
 
@@ -210,22 +244,49 @@ const newQuestion = () => {
   // console.log(questions);
   // console.log(arrayNumbers);
   console.log("Question counter: ", questionCounter);
-  if (questionCounter === 10) {
-    document.location.href = "../results.html";
-  }
 };
 
 div.forEach((el) => {
   el.addEventListener("click", (e) => {
+    const target = e.target.innerText;
     if (e.target.innerText === myAnswer) {
       score++;
       newQuestion();
+      timerCounter = 30;
+      console.log("Punteggio finale: ", score);
+      // if (questionCounter === 10 && e.target.innerText === myAnswer) {
+      //   score++;
+      //   localStorage.setItem("savedScore", score);
+      //   document.location.href = "../results.html";
+      // }
+    } else if (score === 9 && target === myAnswer) {
+      console.log("Santo dio");
+      console.log(target);
+      score++;
+      localStorage.setItem("savedScore", score);
+      document.location.href = "../results.html";
+    } else if (questionCounter === 10) {
+      console.log("Santo dio2");
+      localStorage.setItem("savedScore", score);
+      localStorage.setItem("savedScore", "Ciao a tutti");
+      document.location.href = "../results.html";
     } else {
       newQuestion();
+      timerCounter = 30;
+      // if (questionCounter === 10) {
+      //   localStorage.setItem("savedScore", score);
+      //   document.location.href = "../results.html";
+      // }
     }
     // console.log(e.target, "ciao");
   });
 });
 // button.addEventListener("click", newQuestion);
+
+// div.forEach((el) => {
+//   el.addEventListener("mouseover", () => {
+//     el.style.backgroundColor = "rgb(189, 1, 140)";
+//   });
+// });
 
 startTest();
