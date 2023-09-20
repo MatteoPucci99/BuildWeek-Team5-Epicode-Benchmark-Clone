@@ -257,29 +257,29 @@ div.forEach((el) => {
       newQuestion();
       timerCounter = 30;
       console.log("Punteggio finale: ", score);
-      // if (questionCounter === 10 && e.target.innerText === myAnswer) {
+      if (questionCounter === 10 && e.target.innerText === myAnswer) {
+        score++;
+        // localStorage.setItem("savedScore", score);
+        document.location.href = "../results.html";
+      }
+      // } else if (score === 9 && target === myAnswer) {
+      //   console.log("Santo dio");
+      //   console.log(target);
       //   score++;
       //   localStorage.setItem("savedScore", score);
       //   document.location.href = "../results.html";
-      // }
-    } else if (score === 9 && target === myAnswer) {
-      console.log("Santo dio");
-      console.log(target);
-      score++;
-      localStorage.setItem("savedScore", score);
-      document.location.href = "../results.html";
-    } else if (questionCounter === 10) {
-      console.log("Santo dio2");
-      localStorage.setItem("savedScore", score);
-      localStorage.setItem("savedScore", "Ciao a tutti");
-      document.location.href = "../results.html";
+      // } else if (questionCounter === 10) {
+      //   console.log("Santo dio2");
+      //   localStorage.setItem("savedScore", score);
+      //   localStorage.setItem("savedScore", "Ciao a tutti");
+      //   document.location.href = "../results.html";
     } else {
       newQuestion();
       timerCounter = 30;
-      // if (questionCounter === 10) {
-      //   localStorage.setItem("savedScore", score);
-      //   document.location.href = "../results.html";
-      // }
+      if (questionCounter === 10) {
+        localStorage.setItem("savedScore", score);
+        document.location.href = "../results.html";
+      }
     }
     // console.log(e.target, "ciao");
   });
