@@ -25,9 +25,9 @@ if (correctAnswersPerCent < 60) {
        </div>
     </div>`;
 
-    circularProgression.style.background = `conic-gradient(#D20094 ${
+    circularProgression.style.background = `conic-gradient(#00FFFF ${
       progressStartValue * 3.6
-    }deg, #00FFFF 0deg)`;
+    }deg, #D20094  0deg)`;
 
     if (progressStartValue == progressEndValue) {
       clearInterval(progress);
@@ -49,9 +49,9 @@ if (correctAnswersPerCent < 60) {
         </p>
       </div>
     </div>`;
-    circularProgression.style.background = `conic-gradient(#D20094 ${
+    circularProgression.style.background = `conic-gradient(#00FFFF ${
       progressStartValue * 3.6
-    }deg, #00FFFF 0deg)`;
+    }deg, #D20094  0deg)`;
 
     if (progressStartValue == progressEndValue) {
       clearInterval(progress);

@@ -216,22 +216,6 @@ const newQuestion = () => {
   myAnswer = correctAnswer;
   console.log("La risposta giusta è: ", correctAnswer);
 
-  // AGGIUNGIAMO FUNZIONE PER IL CLICK AD OGNI PARAGRAFO
-  // par.forEach((el) => {
-  //   el.addEventListener("click", (e) => {
-  //     // console.log(e.target.innerText);
-  //     // console.log(randomIndex);
-  //     // console.log(questions[randomIndex].correct_answer);
-
-  //     if (e.target.innerText === correctAnswer) {
-  //       console.log("Trovato");
-  //       score++;
-  //     }
-  //     console.log(e.target.innerText, "Eccolo");
-  //     console.log("ciao");
-  //   });
-  // });
-
   questionCounter++;
   counter.innerHTML = `QUESTION ${questionCounter}<span id=change>/10</span>`;
   document.getElementById("change").style.color = "rgb(178,0,136)";
@@ -242,10 +226,7 @@ const newQuestion = () => {
   localStorage.setItem("savedQuestions", questionCounter);
 
   console.log("Questo è il tuo punteggio: ", score);
-  // console.log(randomIndex);
-  // console.log(par);
-  // console.log(questions);
-  // console.log(arrayNumbers);
+
   console.log("Question counter: ", questionCounter);
 };
 
@@ -258,21 +239,9 @@ div.forEach((el) => {
       timerCounter = 30;
       console.log("Punteggio finale: ", score);
       if (questionCounter === 10 && e.target.innerText === myAnswer) {
-        score++;
-        // localStorage.setItem("savedScore", score);
+        localStorage.setItem("savedScore", score);
         document.location.href = "../results.html";
       }
-      // } else if (score === 9 && target === myAnswer) {
-      //   console.log("Santo dio");
-      //   console.log(target);
-      //   score++;
-      //   localStorage.setItem("savedScore", score);
-      //   document.location.href = "../results.html";
-      // } else if (questionCounter === 10) {
-      //   console.log("Santo dio2");
-      //   localStorage.setItem("savedScore", score);
-      //   localStorage.setItem("savedScore", "Ciao a tutti");
-      //   document.location.href = "../results.html";
     } else {
       newQuestion();
       timerCounter = 30;
@@ -281,15 +250,7 @@ div.forEach((el) => {
         document.location.href = "../results.html";
       }
     }
-    // console.log(e.target, "ciao");
   });
 });
-// button.addEventListener("click", newQuestion);
-
-// div.forEach((el) => {
-//   el.addEventListener("mouseover", () => {
-//     el.style.backgroundColor = "rgb(189, 1, 140)";
-//   });
-// });
 
 startTest();
