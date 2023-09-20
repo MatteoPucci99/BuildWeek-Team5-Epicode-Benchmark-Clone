@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400;700&display=swap");
 
 body {
   margin: 0 auto;
@@ -88,6 +88,7 @@ button {
   display: flex;
   width: 500px;
   padding: 50px 0;
+  margin-top: 25px;
   background-color: transparent;
   flex-direction: column;
   align-items: center;
@@ -98,8 +99,8 @@ button {
 
 .circular-progress {
   position: relative;
-  height: 100px;
-  width: 100px;
+  height: 120px;
+  width: 120px;
   border-radius: 50%;
   /* background-color: rgb(16, 96, 224); */
   background: conic-gradient(
@@ -115,8 +116,8 @@ button {
 .circular-progress::before {
   content: "";
   position: absolute;
-  height: 80px;
-  width: 80px;
+  height: 92px;
+  width: 92px;
   border-radius: 50%;
   background: url(/assets/images/bg.jpg);
   /* background-size: cover; */
@@ -125,11 +126,19 @@ button {
 
 .progress-value {
   position: relative;
-  font-size: 30px;
-  font-weight: 600;
+  font-family: "Outfit", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.start{
+  display: flex;
+  font-size: 20px;
+  justify-content: center;
 }
 
 .count-down {
-  font-size: 0.3em;
+  font-family: "Inter", sans-serif;
+  font-size: 0.2em;
   font-weight: 200;
 }
