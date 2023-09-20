@@ -238,6 +238,9 @@ const newQuestion = () => {
 
   questions.splice(randomIndex, 1);
 
+  localStorage.setItem("savedScore", score);
+  localStorage.setItem("savedQuestions", questionCounter);
+
   console.log("Questo è il tuo punteggio: ", score);
   // console.log(randomIndex);
   // console.log(par);
