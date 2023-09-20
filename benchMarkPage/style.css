@@ -98,8 +98,8 @@ button {
 
 .circular-progress {
   position: relative;
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
   border-radius: 50%;
   /* background-color: rgb(16, 96, 224); */
   background: conic-gradient(
@@ -115,8 +115,8 @@ button {
 .circular-progress::before {
   content: "";
   position: absolute;
-  height: 160px;
-  width: 160px;
+  height: 80px;
+  width: 80px;
   border-radius: 50%;
   background: url(/assets/images/bg.jpg);
   /* background-size: cover; */
@@ -125,7 +125,7 @@ button {
 
 .progress-value {
   position: relative;
-  font-size: 50px;
+  font-size: 30px;
   font-weight: 600;
 }
 
