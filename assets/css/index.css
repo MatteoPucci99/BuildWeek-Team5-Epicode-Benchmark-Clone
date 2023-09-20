@@ -72,13 +72,16 @@ section {
     margin-bottom: 5em;
     margin-right: 12em;
 }
-input[type="checkbox"]{
-    accent-color: blue;
+
+#check p {
+    display: inline;
+    margin-left: 1px;
+    padding-right: 0
 }
 #btn {
-    float: right;}
-
-button {
+    float: right;
+}
+#button {
     font-family: 'Outfit', sans-serif;
     padding: 1em 3.5em;
     background-color: #00FFFF;
@@ -89,5 +92,16 @@ button {
     margin-top: 3.5em;
 }
 
+#checkbox {
+    display: inline-block;
+    border: 2px solid white;
+    width: 12px;
+    height: 16px;
+    margin: 3px 3px 3px 4px;
+    background: transparent;
+}
 
+#checkbox:focus {
+    background-color: white;
+}
 
