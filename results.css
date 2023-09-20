@@ -101,26 +101,23 @@ justify-content: center;
 .titleInsideCircle h3 span {
     color: #00FFFF;
 }
-
-
-#rateUs {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    border: 3px solid white;
+/* #0c113b 15% */
+#btnRate{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    background: linear-gradient( to right, #231251 15% , #4d1a5c  100% ) padding-box,
+                linear-gradient(#ffffff, rgb(255, 255, 255)) border-box; 
+    border: 2px solid white;
     height: 3em;
-    width: 11em;
-margin-left: auto;
-margin-right: auto;
-text-align: center;
-font-size: 20px;
-margin-bottom: 50px;
+    width:  11em;
+    color: white;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
 }
 
-#rateUs:hover{
-cursor: pointer;
+button:hover{
+    cursor: pointer;
 }
 
-footer {
-    visibility: hidden;
-}
