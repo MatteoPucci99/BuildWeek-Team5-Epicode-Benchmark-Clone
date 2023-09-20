@@ -145,7 +145,7 @@ const timer = () => {
       newQuestion();
     } else {
       timerCounter -= deleteOne;
-      progressValue.innerHTML = `<p class='count-down'>SECONDS</p> ${timerCounter} <p class='count-down'>REMAINING</p>`;
+      progressValue.innerHTML = `<p class='count-down'>SECONDS</p>${timerCounter} <p class='count-down'>REMAINING</p>`;
       circularProgression.style.background = `conic-gradient(hsl(180deg 100% 50%)
      ${timerCounter * 12}deg, hsl(0, 0%, 87%) 0deg)`;
     }
@@ -240,14 +240,14 @@ div.forEach((el) => {
       console.log("Punteggio finale: ", score);
       if (questionCounter === 10 && e.target.innerText === myAnswer) {
         localStorage.setItem("savedScore", score);
-        document.location.href = "../results.html";
+        document.location.href = "../resultsPage/results.html";
       }
     } else {
       newQuestion();
       timerCounter = 30;
       if (questionCounter === 10) {
         localStorage.setItem("savedScore", score);
-        document.location.href = "../results.html";
+        document.location.href = "../resultsPage/results.html";
       }
     }
   });
