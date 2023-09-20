@@ -76,8 +76,8 @@ input[type="checkbox"]{
     accent-color: blue;
 }
 #btn {
-    float: right;
-}
+    float: right;}
+
 button {
     font-family: 'Outfit', sans-serif;
     padding: 1em 3.5em;
