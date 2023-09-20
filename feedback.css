@@ -17,7 +17,6 @@ header img {
   margin: auto;
 }
 main {
-  
   color: white;
   text-align: center;
 
@@ -34,7 +33,6 @@ i {
   margin-bottom: 75px;
   padding-right: 10px;
 }
-
 
 .lit {
   color: #00ffff;
@@ -75,38 +73,36 @@ h3 {
   margin-top: 100px;
 }
 
-
-input{
-    border-color: transparent;
-    background: transparent;
-    border-bottom: 2px solid rgb(194 18 141);
-    width: 55%;
-    margin-top: 50px;
-    padding-left: 2em;
-    font-family: "Inter", sans-serif;
-    color: white;
-    padding-bottom: 10px;
+input {
+  border-color: transparent;
+  background: transparent;
+  border-bottom: 2px solid rgb(194 18 141);
+  width: 55%;
+  margin-top: 50px;
+  padding-left: 2em;
+  font-family: "Inter", sans-serif;
+  color: white;
+  padding-bottom: 10px;
 }
-input:focus{
+input:focus {
   outline: none;
 }
 
-#btnRate{
-    font-family: 'Outfit', sans-serif;
-    font-weight: 700;
-    width: 12.5vw;
-    height: 7vh;
-    padding: 0.5em 1em;
-    background-color: #00FFFF;
-    font-size: 20px;
-    font-weight: 700;
-    border: 1px solid #00FFFF;
-    box-shadow: 1.5px 0px 20px 1px #00FFFF; 
-    margin-top: 2.5em;
-    margin-bottom: 50px;
+#btnRate {
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  width: 12.5vw;
+  height: 7vh;
+  padding: 0.5em 1em;
+  background-color: #00ffff;
+  font-size: 20px;
+  font-weight: 700;
+  border: 1px solid #00ffff;
+  box-shadow: 1.5px 0px 20px 1px #00ffff;
+  margin-top: 2.5em;
+  margin-bottom: 50px;
 }
 
-
-button:hover{
+button:hover {
   cursor: pointer;
 }
