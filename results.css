@@ -106,8 +106,7 @@ justify-content: center;
     margin-left: auto;
     margin-right: auto;
     display: block;
-    background: linear-gradient( to right, #231251 15% , #4d1a5c  100% ) padding-box,
-                linear-gradient(#ffffff, rgb(255, 255, 255)) border-box; 
+    background: transparent;
     border: 2px solid white;
     height: 3em;
     width:  11em;
