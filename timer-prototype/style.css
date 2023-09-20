@@ -71,15 +71,17 @@ circle {
   stroke-width: 20px;
   stroke-dasharray: 440;
   stroke-dashoffset: 440;
-  animation: anim 60s linear backwards;
+  animation: anim 30s linear backwards;
+  animation-iteration-count: 10;
 }
 svg {
   position: absolute;
   top: 0;
   left: 0;
+  transform: rotate(-80deg);
 }
 @keyframes anim {
-  100% {
+  0% {
     stroke-dashoffset: 0;
   }
 }
