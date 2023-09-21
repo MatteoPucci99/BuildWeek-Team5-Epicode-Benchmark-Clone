@@ -56,12 +56,12 @@ body {
 
 .correct-answer {
   background: linear-gradient(rgb(12, 163, 50) 0 0) padding-box,
-    linear-gradient(170deg, rgb(186, 225, 188), rgb(12, 163, 50) 0 0) border-box;
+    linear-gradient(170deg, rgb(247, 247, 247), rgb(12, 163, 50)) border-box;
 }
 
 .wrong-answer {
-  background: linear-gradient(rgb(231, 48, 12) 0 0) padding-box,
-    linear-gradient(170deg, rgb(255, 199, 175), rgb(231, 48, 12) 0 0) border-box;
+  background: linear-gradient(rgb(209, 40, 6) 0 0) padding-box,
+    linear-gradient(170deg, rgb(255, 183, 183), rgb(209, 40, 6)) border-box;
 }
 
 .cards-text {
@@ -141,7 +141,7 @@ button {
   font-weight: 400;
 }
 
-.start{
+.start {
   display: flex;
   font-size: 20px;
   justify-content: center;
@@ -151,4 +151,8 @@ button {
   font-family: "Inter", sans-serif;
   font-size: 0.5vw;
   font-weight: 200;
+}
+
+.title-container {
+  height: 250px;
 }

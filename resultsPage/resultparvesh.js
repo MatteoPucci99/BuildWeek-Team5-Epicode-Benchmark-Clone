@@ -9,6 +9,11 @@ let resulText = document.getElementsByClassName("textInsideCircle");
 let progressStartValue = 0,
   progressEndValue = wrongAnswersPerCent,
   speed = 20;
+// RESET DEL FORM
+const rateUs = document.getElementById("formResult");
+rateUs.addEventListener("submit", (e) => {
+  e.preventDefault();
+});
 
 if (wrongAnswersPerCent >= 50) {
   const progress = setInterval(() => {
@@ -73,3 +78,10 @@ wrongDisplay.innerHTML = `  <p>Wrong</p>
                               questionsFeedback - scoreFeedback
                             }/${questionsFeedback} question</p>`;
 wrongDisplay.style.textAlign = "right";
+
+const goToFeedback = () => {
+  document.location.href = "../feedbackPage/feedback.html";
+};
+
+const resultButton = document.getElementById("btnRate");
+resultButton.addEventListener("click", goToFeedback);

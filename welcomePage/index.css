@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 
 body {
     width: 100%;
@@ -38,7 +38,7 @@ main {
 }
 
 span {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 
@@ -64,7 +64,7 @@ ul {
 }
 
 section {
-    display: inline-block;
+  display: inline-block;
 }
 
 #check {
@@ -76,12 +76,12 @@ section {
 }
 
 #check p {
-    display: inline;
-    margin-left: 1px;
-    padding-right: 0
+  display: inline;
+  margin-left: 1px;
+  padding-right: 0;
 }
 #btn {
-    float: right;
+  float: right;
 }
 #button {
     position: absolute;
@@ -104,7 +104,6 @@ section {
     margin-right: 0.7vw;
 }
 
-#checkbox:focus {
-    background-color: white;
+.clicked:focus {
+  background-color: white;
 }
-

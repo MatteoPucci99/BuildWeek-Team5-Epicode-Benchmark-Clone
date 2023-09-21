@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input[type="radio"] {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form id="form">
+        <h1>Choose how many questions you want</h1>
+        <label for="1">10</label>
+        <input class="numbers" name="number" value="10" id="1" type="radio" />
+
+        <label for="6">15</label>
+        <input class="numbers" name="number" value="15" id="6" type="radio" />
+
+        <label for="11">20</label>
+        <input class="numbers" name="number" value="20" id="11" type="radio" />
+        <h1>Choose hard or easy mode</h1>
+        <input class="mode" name="mode" id="easy" value="easy" type="radio" />
+        <label for="easy">Easy</label>
+        <input
+          class="mode"
+          name="mode"
+          id="medium"
+          value="medium"
+          type="radio"
+        />
+        <label for="medium">Medium</label>
+        <input class="mode" name="mode" id="hard" value="hard" type="radio" />
+        <label for="hard">Hard</label>
+        <button id="start-button">START</button>
+      </form>
+    </div>
+
+    <script src="set-question.js"></script>
+  </body>
+</html>
