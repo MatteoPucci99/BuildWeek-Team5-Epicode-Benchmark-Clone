@@ -132,6 +132,7 @@ let progressValue = document.querySelector(".progress-value");
 
 let timerCounter = 30;
 const deleteOne = 1;
+let newCount = 0;
 
 // let timerCounter = 30;
 // const deleteOne = 1;
@@ -142,12 +143,14 @@ const timer = () => {
   setInterval(() => {
     if (timerCounter === 0) {
       timerCounter = 30;
+      newCount = 0;
       newQuestion();
     } else {
       timerCounter -= deleteOne;
+      newCount++;
       progressValue.innerHTML = `<p class='count-down'>SECONDS</p>${timerCounter} <p class='count-down'>REMAINING</p>`;
       circularProgression.style.background = `conic-gradient(hsl(180deg 100% 50%)
-     ${timerCounter * 12}deg, hsl(0, 0%, 87%) 0deg)`;
+     ${newCount * 12}deg, hsl(294.12deg 20.16% 50.39%)  0deg)`;
     }
   }, 1000);
 };
