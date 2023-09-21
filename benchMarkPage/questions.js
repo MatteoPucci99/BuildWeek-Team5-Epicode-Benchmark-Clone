@@ -151,6 +151,9 @@ const timer = () => {
       progressValue.innerHTML = `<p class='count-down'>SECONDS</p>${timerCounter} <p class='count-down'>REMAINING</p>`;
       circularProgression.style.background = `conic-gradient( hsl(294.12deg 20.16% 50.39%) 
      ${newCount * 12}deg, hsl(180deg 100% 50%)  0deg)`;
+      if (timerCounter === 0 && questionCounter === 10) {
+        document.location.href = "../results.html";
+      }
     }
   }, 1000);
 };
@@ -167,9 +170,6 @@ timer();
 const startTest = () => {
   let questionCounter = 0;
   let score = 0;
-  // avaibleQuestions = [...questions];
-  // questionTitle.innerText = questions[0].question;
-  // questions.splice(0, 1);
   newQuestion();
 };
 
@@ -178,6 +178,13 @@ const newQuestion = () => {
   if (questionCounter === 10) {
     return;
   }
+
+  // reset dello style del div
+  div.forEach((el) => {
+    el.classList.remove("correct-answer");
+    el.classList.remove("wrong-answer");
+    el.classList.add("hover-effect");
+  });
 
   const randomIndex = Math.floor(Math.random() * questions.length);
   questionTitle.innerText = questions[randomIndex].question;
@@ -215,15 +222,22 @@ const newQuestion = () => {
     div[3].style.visibility = "hidden";
   }
 
+  // PORTO FUORI LE RISPOSTE GIUSTE PER SALVARLE A LIVELLO GLOBALE
   const correctAnswer = questions[randomIndex].correct_answer;
   myAnswer = correctAnswer;
+  // SUGGERIMENTO 'PERSONALE' PER LA RISPOSTA CORRETTA PER FARE DELLE VERIFICHE
   console.log("La risposta giusta è: ", correctAnswer);
 
   questionCounter++;
-  counter.innerHTML = `QUESTION ${questionCounter}<span id=change>/10</span>`;
+  counter.innerHTML = `QUESTION ${questionCounter}<span id='change'>/10</span>`;
   document.getElementById("change").style.color = "rgb(178,0,136)";
 
+  // TOLGO LA DOMANDA ATTUALE DAL ARRAY DI OGGETTI PER NON RIPETERE LE STESSE DOMANDE OGNI VOLTA
   questions.splice(randomIndex, 1);
+
+  // COUNTER 'PERSONALE' PER TRACCIARE IN CONSOLE IL PUNTEGGIO E LE DOMANDE
+  console.log("Questo è il tuo punteggio: ", score);
+  console.log("Question counter: ", questionCounter);
 
   localStorage.setItem("savedScore", score);
   localStorage.setItem("savedQuestions", questionCounter);
@@ -233,12 +247,20 @@ const newQuestion = () => {
   console.log("Question counter: ", questionCounter);
 };
 
+// FUNZIONE PER OGNI CLICK CHE SI FERMA QUANDO questionCounter === 10
 div.forEach((el) => {
   el.addEventListener("click", (e) => {
+    if (questionCounter === 10) {
+      return;
+    }
     const target = e.target.innerText;
     if (e.target.innerText === myAnswer) {
       score++;
-      newQuestion();
+      console.log("Questo è :", e.target);
+      e.target.parentElement.classList.add("correct-answer");
+      e.target.parentElement.classList.remove("hover-effect");
+      setTimeout(newQuestion, 1000);
+      // newQuestion();
       timerCounter = 30;
       console.log("Punteggio finale: ", score);
       if (questionCounter === 10 && e.target.innerText === myAnswer) {
@@ -246,7 +268,10 @@ div.forEach((el) => {
         document.location.href = "../resultsPage/results.html";
       }
     } else {
-      newQuestion();
+      console.log("Questo è :", e.target);
+      e.target.parentElement.classList.add("wrong-answer");
+      e.target.parentElement.classList.remove("hover-effect");
+      setTimeout(newQuestion, 1000);
       timerCounter = 30;
       if (questionCounter === 10) {
         localStorage.setItem("savedScore", score);
