@@ -4,16 +4,23 @@
 body {
   background-image: url(../assets/images/bg.jpg);
   background-size: 100%;
+  width: 100%;
+  height: 100%;
 }
 .container {
   height: 100vh;
 }
 header img {
-  height: 2em;
+  width: 15vw;
+  margin-left: 5vw;
+  margin-top: 3vw;
+}
+
+.pform h3{
+  font-size:1.9vw ;
 }
 
 .rating {
-  width: 700px;
   margin: auto;
 }
 main {
@@ -24,34 +31,31 @@ main {
   margin-right: auto;
 }
 .text-container {
-  margin-top: 100px;
+  margin-top: 6vw;
 }
 i {
   color: rgb(9, 15, 48);
-  font-size: 3em;
-  margin-top: 35px;
-  margin-bottom: 75px;
-  padding-right: 10px;
+  font-size: 3vw;
+  margin-top: 2.5vw;
+  margin-bottom: 6vw;
+  padding-right: 1vw;
 }
 
 .lit {
   color: #00ffff;
 }
-header img {
-  width: 15%;
-  margin-left: 6em;
-  margin-top: 35px;
-  height: 15%;
-}
+
 
 h1 {
-  font-size: 60px;
-  margin-bottom: 30px;
+  text-align: center;
+  line-height: 3vw;
+  font-size: 5vw;
+  margin-bottom: 2vw;
   font-family: "Outfit", sans-serif;
   font-weight: 700;
 }
 h3 {
-  font-size: 28px;
+  font-size: 2vw;
   font-family: "Inter", sans-serif;
   font-weight: 400;
 }
@@ -67,22 +71,17 @@ h3 {
   font-family: "Inter", sans-serif;
   font-weight: 400;
 }
-.comment-container {
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-top: 100px;
-}
 
 input {
   border-color: transparent;
   background: transparent;
   border-bottom: 2px solid rgb(194 18 141);
   width: 55%;
-  margin-top: 50px;
-  padding-left: 2em;
+  margin-top: 3.5vw;
+  padding-left: 2vw;
   font-family: "Inter", sans-serif;
   color: white;
-  padding-bottom: 10px;
+  padding-bottom: 1vw;
 }
 input:focus {
   outline: none;
@@ -92,15 +91,15 @@ input:focus {
   font-family: "Outfit", sans-serif;
   font-weight: 700;
   width: 12.5vw;
-  height: 7vh;
-  padding: 0.5em 1em;
+  height: 3.5vw;
+  padding: 0.5vw 1vw;
   background-color: #00ffff;
-  font-size: 20px;
+  font-size: 1.2vw;
   font-weight: 700;
   border: 1px solid #00ffff;
   box-shadow: 1.5px 0px 20px 1px #00ffff;
-  margin-top: 2.5em;
-  margin-bottom: 50px;
+  margin-top: 2.5vw;
+  margin-bottom: 2vw;
 }
 
 button:hover {

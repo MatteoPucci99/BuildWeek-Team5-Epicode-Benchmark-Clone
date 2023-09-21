@@ -4,62 +4,60 @@
 body {
   width: 100%;
   height: 100vh;
+  background-image: url("../assets/images/bg.jpg");
+  background-size: cover;
 }
 .container {
   margin: 0 auto;
-  background-image: url("../assets/images/bg.jpg");
-  background-size: contain;
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-size: cover;
+  height: 100%;
+  width: 100%;
   color: white;
   font-family: "Inter", sans-serif;
 }
 
 .title {
-  height: 200px;
-  width: 1000px;
+  width: 40%;
 }
 
+h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: 5vw;
+  padding-top: 10vh;
+  padding-bottom: 1.5vh;
+}
 img {
   width: 15%;
-  margin-left: 6em;
-  margin-top: 2.5em;
+  margin-left: 5vw;
+  margin-top: 2.5vw;
 }
 
 main {
-  margin-left: 6em;
+  margin-left: 5vw;
 }
 
 span {
   font-weight: 700;
 }
 
-h1 {
-  font-family: "Outfit", sans-serif;
-  font-size: 60px;
-  padding-top: 1.2em;
-  padding-right: 65%;
-}
-
 h2 {
   font-family: "Outfit", sans-serif;
   color: #d20094;
   font-weight: 700;
-  font-size: 25px;
-  padding-top: 1em;
-  padding-bottom: 0.6em;
+  font-size: 2vw;
+  padding-top: 1vw;
+  padding-bottom: 2vh;
 }
 
 p {
-  padding-right: 45%;
-  line-height: 1.3;
+  font-size: 1.2vw;
+  line-height: 1.5vw;
 }
 
 ul {
   padding-top: 3em;
-  padding-left: 2em;
-  line-height: 1.5;
+  padding-left: 2vw;
+  line-height: 2.3vw;
+  font-size: 1.2vw;
 }
 
 section {
@@ -67,7 +65,8 @@ section {
 }
 
 #check {
-  float: left;
+  display: inline-flex;
+  align-items: center;
   padding-top: 6em;
   margin-bottom: 5em;
   margin-right: 12em;
@@ -99,7 +98,25 @@ section {
   height: 16px;
   margin: 3px 3px 3px 4px;
   background: transparent;
+  position: absolute;
+  left: 60vw;
+  font-family: "Outfit", sans-serif;
+  padding: 1em 3.5em;
+  background-color: #00ffff;
+  font-size: 1.3vw;
+  font-weight: 700;
+  border: 1px solid #00ffff;
+  box-shadow: 1px 0px 24px 6px #00ffff;
 }
+
+/* #checkbox {
+    display: inline-block;
+    border: 2px solid white;S
+    width: 12px;
+    height: 16px;
+    background: transparent;
+    margin-right: 0.7vw;
+} */
 
 .clicked:focus {
   background-color: white;
