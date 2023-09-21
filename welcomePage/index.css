@@ -2,65 +2,62 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 
 body {
-    width: 100%;
-    height: 100vh;
-    background-image: url('../assets/images/bg.jpg');
-    background-size: cover;
-    
+  width: 100%;
+  height: 100vh;
+  background-image: url("../assets/images/bg.jpg");
+  background-size: cover;
 }
 .container {
-    margin: 0 auto;
-    height: 100%;
-    width: 100%;
-    color: white;
-    font-family: 'Inter', sans-serif;
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  color: white;
+  font-family: "Inter", sans-serif;
 }
 
-.title{
-    
-    width: 40%;
+.title {
+  width: 40%;
 }
 
 h1 {
-    font-family: 'Outfit', sans-serif;
-    font-size: 5vw;
-    padding-top: 10vh;
-    padding-bottom: 1.5vh;
+  font-family: "Outfit", sans-serif;
+  font-size: 5vw;
+  padding-top: 10vh;
+  padding-bottom: 1.5vh;
 }
 img {
-    width: 15%;
-    margin-left: 5vw;
-    margin-top: 2.5vw;
+  width: 15%;
+  margin-left: 5vw;
+  margin-top: 2.5vw;
 }
 
 main {
-    margin-left: 5vw;
+  margin-left: 5vw;
 }
 
 span {
   font-weight: 700;
 }
 
-
 h2 {
-    font-family: 'Outfit', sans-serif;
-    color: #D20094;
-    font-weight: 700;
-    font-size: 2vw;
-    padding-top: 1vw;
-    padding-bottom: 2vh;
+  font-family: "Outfit", sans-serif;
+  color: #d20094;
+  font-weight: 700;
+  font-size: 2vw;
+  padding-top: 1vw;
+  padding-bottom: 2vh;
 }
 
 p {
-    font-size: 1.2vw;
-    line-height: 1.5vw;
+  font-size: 1.2vw;
+  line-height: 1.5vw;
 }
 
 ul {
-    padding-top: 3em;
-    padding-left: 2vw;
-    line-height: 2.3vw;
-    font-size:1.2vw
+  padding-top: 3em;
+  padding-left: 2vw;
+  line-height: 2.3vw;
+  font-size: 1.2vw;
 }
 
 section {
@@ -68,11 +65,11 @@ section {
 }
 
 #check {
-    display: inline-flex;
-    align-items: center;
-    padding-top: 6em;
-    margin-bottom: 5em;
-    margin-right: 12em;
+  display: inline-flex;
+  align-items: center;
+  padding-top: 6em;
+  margin-bottom: 5em;
+  margin-right: 12em;
 }
 
 #check p {
@@ -84,25 +81,42 @@ section {
   float: right;
 }
 #button {
-    position: absolute;
-    left: 60vw;
-    font-family: 'Outfit', sans-serif;
-    padding: 1em 3.5em;
-    background-color: #00FFFF;
-    font-size: 1.3vw;
-    font-weight: 700;
-    border: 1px solid #00FFFF;
-    box-shadow: 1px 0px 24px 6px #00FFFF; 
+  font-family: "Outfit", sans-serif;
+  padding: 1em 3.5em;
+  background-color: #00ffff;
+  font-size: 20px;
+  font-weight: 700;
+  border: 1px solid #00ffff;
+  box-shadow: 1px 0px 24px 6px #00ffff;
+  margin-top: 3.5em;
 }
 
-#checkbox {
+.checkbox {
+  display: inline-block;
+  border: 2px solid white;
+  width: 12px;
+  height: 16px;
+  margin: 3px 3px 3px 4px;
+  background: transparent;
+  position: absolute;
+  left: 60vw;
+  font-family: "Outfit", sans-serif;
+  padding: 1em 3.5em;
+  background-color: #00ffff;
+  font-size: 1.3vw;
+  font-weight: 700;
+  border: 1px solid #00ffff;
+  box-shadow: 1px 0px 24px 6px #00ffff;
+}
+
+/* #checkbox {
     display: inline-block;
-    border: 2px solid white;
+    border: 2px solid white;S
     width: 12px;
     height: 16px;
     background: transparent;
     margin-right: 0.7vw;
-}
+} */
 
 .clicked:focus {
   background-color: white;

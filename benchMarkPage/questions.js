@@ -777,9 +777,6 @@ let timerCounter = 30;
 const deleteOne = 1;
 let newCount = 0;
 
-// let timerCounter = 30;
-// const deleteOne = 1;
-
 // TIMER FUNCTION
 
 const timer = () => {
@@ -792,11 +789,11 @@ const timer = () => {
       timerCounter -= deleteOne;
       newCount++;
       progressValue.innerHTML = `<p class='count-down'>SECONDS</p>${timerCounter} <p class='count-down'>REMAINING</p>`;
-      circularProgression.style.background = `conic-gradient( hsl(294.12deg 20.16% 50.39%) 
-     ${newCount * 12}deg, hsl(180deg 100% 50%)  0deg)`;
-      if (timerCounter === 0 && questionCounter === 10) {
-        document.location.href = "../results.html";
-      }
+      circularProgression.style.background = `conic-gradient(hsl(292.12deg 20.16% 50.39%)
+       ${newCount * 12}deg, hsl(180deg, 100%, 50%) 0deg)`;
+    }
+    if (timerCounter === 0 && questionCounter === numberOfQuests) {
+      goToResult();
     }
   }, 1000);
 };
@@ -931,7 +928,26 @@ div.forEach((el) => {
       setTimeout(newQuestion, 1000);
       timerCounter = 30;
       newCount = 0;
-      if (questionCounter === 10) {
+      // if (questionCounter === 10) {
+      //   localStorage.setItem("savedScore", score);
+      //   document.location.href = "../resultsPage/results.html";
+      // }
+    }
+  });
+});
+
+const goToResult = () => {
+  document.location.href = "../resultsPage/results.html";
+};
+
+// FUNZIONE PER OGNI CLICK CHE SI ATTIVA QUANDO questionCounter === 10
+div.forEach((el) => {
+  el.addEventListener("click", (e) => {
+    if (questionCounter === numberOfQuests && timerCounter < 30) {
+      if (e.target.innerText === myAnswer) {
+        score++;
+        e.target.parentElement.classList.add("correct-answer");
+        e.target.parentElement.classList.remove("hover-effect");
         localStorage.setItem("savedScore", score);
         setTimeout(goToResult, 1000);
       } else {

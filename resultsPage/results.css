@@ -13,8 +13,8 @@ main {
 }
 
 .container {
- display: block;
- width: 100vw; 
+  display: block;
+  width: 100vw;
 }
 
 header {
@@ -58,7 +58,6 @@ header img {
   font-family: "Outfit", sans-serif;
   font-weight: 400;
   font-size: 3vw;
-  
 }
 
 .wrong {
@@ -68,7 +67,6 @@ header img {
   font-family: "Outfit", sans-serif;
   font-weight: 400;
   font-size: 3vw;
-  
 }
 
 .titleInsideCircle h3 {
@@ -90,7 +88,6 @@ header img {
 .titleInsideCircle h3 {
   font-size: 1.5vw;
   /* line-height: 2vw; */
-
 }
 
 .titleInsideCircle h3 span {
@@ -121,9 +118,8 @@ button:hover {
 }
 
 .answer {
-  font-family: "Inter", sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 1vw;
   font-weight: 200;
   padding-top: 0.5vw;
-  
 }
