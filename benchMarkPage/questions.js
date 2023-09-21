@@ -149,8 +149,8 @@ const timer = () => {
       timerCounter -= deleteOne;
       newCount++;
       progressValue.innerHTML = `<p class='count-down'>SECONDS</p>${timerCounter} <p class='count-down'>REMAINING</p>`;
-      circularProgression.style.background = `conic-gradient(hsl(180deg 100% 50%)
-     ${newCount * 12}deg, hsl(294.12deg 20.16% 50.39%)  0deg)`;
+      circularProgression.style.background = `conic-gradient( hsl(294.12deg 20.16% 50.39%) 
+     ${newCount * 12}deg, hsl(180deg 100% 50%)  0deg)`;
     }
   }, 1000);
 };
