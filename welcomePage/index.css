@@ -108,3 +108,30 @@ section {
     background-color: white;
 }
 
+
+/* DropDownMenu */
+
+#menu{
+    width: 6.5vw;
+    text-align: center;
+}
+
+#dropDown{
+    visibility: hidden;
+    list-style-type: none;
+    padding-top: 0.5vw;
+}
+
+.dropDown-child:first-child{
+    border-bottom: none;
+}
+
+.dropDown-child:last-child{
+    border-top: none;
+}
+
+.dropDown-child{
+    padding-left: 0.5vw;
+    border: 1px solid white;
+    width: 6vw;
+}
