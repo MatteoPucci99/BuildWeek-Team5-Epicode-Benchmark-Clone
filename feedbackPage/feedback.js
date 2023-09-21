@@ -21,3 +21,16 @@ const starsClickable = (stars) => {
 };
 
 starsClickable(ratingStars);
+
+const form = document.getElementById("form");
+console.log(form);
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+});
+const link = () => {
+  window.location.href = "https://epicode.com/it/";
+};
+
+const button = document.getElementById("btnRate");
+
+button.addEventListener("click", link);

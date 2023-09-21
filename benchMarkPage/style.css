@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-  width: 900px;
+  width: 1000px;
   margin: 150px auto;
   /* background-color: blueviolet; */
   color: white;
@@ -32,13 +32,14 @@ body {
   font-weight: bold;
   height: 70px;
   display: inline-block;
-  width: 400px;
+  width: 450px;
   margin: 20px;
   background: linear-gradient(rgb(40, 41, 82) 0 0) padding-box,
     linear-gradient(170deg, #ffffff, rgb(40, 41, 82)) border-box;
 
   border-radius: 50px;
   border: 3px solid transparent;
+  cursor: pointer;
 
   /* & :hover {
     background-color: rgb(189, 1, 140) !important;
@@ -53,12 +54,12 @@ body {
 
 .correct-answer {
   background: linear-gradient(rgb(12, 163, 50) 0 0) padding-box,
-    linear-gradient(170deg, rgb(186, 225, 188), rgb(12, 163, 50) 0 0) border-box;
+    linear-gradient(170deg, rgb(247, 247, 247), rgb(12, 163, 50)) border-box;
 }
 
 .wrong-answer {
-  background: linear-gradient(rgb(231, 48, 12) 0 0) padding-box,
-    linear-gradient(170deg, rgb(255, 199, 175), rgb(231, 48, 12) 0 0) border-box;
+  background: linear-gradient(rgb(209, 40, 6) 0 0) padding-box,
+    linear-gradient(170deg, rgb(255, 183, 183), rgb(209, 40, 6)) border-box;
 }
 
 .cards-text {
@@ -138,7 +139,7 @@ button {
   font-weight: 400;
 }
 
-.start{
+.start {
   display: flex;
   font-size: 20px;
   justify-content: center;
@@ -146,6 +147,10 @@ button {
 
 .count-down {
   font-family: "Inter", sans-serif;
-  font-size: 0.2em;
+  font-size: 0.25em;
   font-weight: 200;
+}
+
+.title-container {
+  height: 250px;
 }
