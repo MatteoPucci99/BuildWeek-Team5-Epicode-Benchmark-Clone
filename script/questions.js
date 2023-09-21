@@ -147,7 +147,10 @@ const timer = () => {
       timerCounter -= deleteOne;
       progressValue.innerHTML = `<p class='count-down'>SECONDS</p> ${timerCounter} <p class='count-down'>REMAINING</p>`;
       circularProgression.style.background = `conic-gradient(hsl(180deg 100% 50%)
-     ${timerCounter * 12}deg, hsl(0, 0%, 87%) 0deg)`;
+       ${timerCounter * 12}deg, hsl(0, 0%, 87%) 0deg)`;
+    }
+    if (timerCounter === 0 && questionCounter === 10) {
+      document.location.href = "../results.html";
     }
   }, 1000);
 };
@@ -164,9 +167,6 @@ timer();
 const startTest = () => {
   let questionCounter = 0;
   let score = 0;
-  // avaibleQuestions = [...questions];
-  // questionTitle.innerText = questions[0].question;
-  // questions.splice(0, 1);
   newQuestion();
 };
 
@@ -175,6 +175,13 @@ const newQuestion = () => {
   if (questionCounter === 10) {
     return;
   }
+
+  // reset dello style del div
+  div.forEach((el) => {
+    el.classList.remove("correct-answer");
+    el.classList.remove("wrong-answer");
+    el.classList.add("hover-effect");
+  });
 
   const randomIndex = Math.floor(Math.random() * questions.length);
   questionTitle.innerText = questions[randomIndex].question;
@@ -212,84 +219,72 @@ const newQuestion = () => {
     div[3].style.visibility = "hidden";
   }
 
+  // PORTO FUORI LE RISPOSTE GIUSTE PER SALVARLE A LIVELLO GLOBALE
   const correctAnswer = questions[randomIndex].correct_answer;
   myAnswer = correctAnswer;
+  // SUGGERIMENTO 'PERSONALE' PER LA RISPOSTA CORRETTA PER FARE DELLE VERIFICHE
   console.log("La risposta giusta è: ", correctAnswer);
 
-  // AGGIUNGIAMO FUNZIONE PER IL CLICK AD OGNI PARAGRAFO
-  // par.forEach((el) => {
-  //   el.addEventListener("click", (e) => {
-  //     // console.log(e.target.innerText);
-  //     // console.log(randomIndex);
-  //     // console.log(questions[randomIndex].correct_answer);
-
-  //     if (e.target.innerText === correctAnswer) {
-  //       console.log("Trovato");
-  //       score++;
-  //     }
-  //     console.log(e.target.innerText, "Eccolo");
-  //     console.log("ciao");
-  //   });
-  // });
-
+  // AGGIUNGO AD OGNI DOMANDA UN +1 AL COUNTER DELLE DOMANDE
   questionCounter++;
   counter.innerHTML = `QUESTION ${questionCounter}<span id=change>/10</span>`;
   document.getElementById("change").style.color = "rgb(178,0,136)";
 
+  // TOLGO LA DOMANDA ATTUALE DAL ARRAY DI OGGETTI PER NON RIPETERE LE STESSE DOMANDE OGNI VOLTA
   questions.splice(randomIndex, 1);
+
+  // COUNTER 'PERSONALE' PER TRACCIARE IN CONSOLE IL PUNTEGGIO E LE DOMANDE
+  console.log("Questo è il tuo punteggio: ", score);
+  console.log("Question counter: ", questionCounter);
 
   localStorage.setItem("savedScore", score);
   localStorage.setItem("savedQuestions", questionCounter);
-
-  console.log("Questo è il tuo punteggio: ", score);
-  // console.log(randomIndex);
-  // console.log(par);
-  // console.log(questions);
-  // console.log(arrayNumbers);
-  console.log("Question counter: ", questionCounter);
 };
 
+// FUNZIONE PER OGNI CLICK CHE SI FERMA QUANDO questionCounter === 10
 div.forEach((el) => {
   el.addEventListener("click", (e) => {
+    if (questionCounter === 10) {
+      return;
+    }
     const target = e.target.innerText;
     if (e.target.innerText === myAnswer) {
       score++;
-      newQuestion();
+      console.log("Questo è :", e.target);
+      e.target.parentElement.classList.add("correct-answer");
+      e.target.parentElement.classList.remove("hover-effect");
+      setTimeout(newQuestion, 1000);
+      // newQuestion();
       timerCounter = 30;
       console.log("Punteggio finale: ", score);
-      if (questionCounter === 10 && e.target.innerText === myAnswer) {
-        score++;
-        // localStorage.setItem("savedScore", score);
-        document.location.href = "../results.html";
-      }
-      // } else if (score === 9 && target === myAnswer) {
-      //   console.log("Santo dio");
-      //   console.log(target);
-      //   score++;
-      //   localStorage.setItem("savedScore", score);
-      //   document.location.href = "../results.html";
-      // } else if (questionCounter === 10) {
-      //   console.log("Santo dio2");
-      //   localStorage.setItem("savedScore", score);
-      //   localStorage.setItem("savedScore", "Ciao a tutti");
-      //   document.location.href = "../results.html";
     } else {
-      newQuestion();
+      console.log("Questo è :", e.target);
+      e.target.parentElement.classList.add("wrong-answer");
+      e.target.parentElement.classList.remove("hover-effect");
+      setTimeout(newQuestion, 1000);
       timerCounter = 30;
-      if (questionCounter === 10) {
-        localStorage.setItem("savedScore", score);
-        document.location.href = "../results.html";
-      }
     }
-    // console.log(e.target, "ciao");
   });
 });
-// button.addEventListener("click", newQuestion);
 
-// div.forEach((el) => {
-//   el.addEventListener("mouseover", () => {
-//     el.style.backgroundColor = "rgb(189, 1, 140)";
-//   });
-// });
+// FUNZIONE PER IL TIMEOUT DOPO L'ULTIMA RISPOSTA PRIMA DI ACCEDERE A result.html
+const goToResult = () => {
+  document.location.href = "../results.html";
+};
+
+// FUNZIONE PER OGNI CLICK CHE SI ATTIVA QUANDO questionCounter === 10
+div.forEach((el) => {
+  el.addEventListener("click", (e) => {
+    if (questionCounter === 10 && timerCounter < 30) {
+      if (e.target.innerText === myAnswer) {
+        score++;
+        localStorage.setItem("savedScore", score);
+        setTimeout(goToResult, 500);
+      } else {
+        setTimeout(goToResult, 500);
+      }
+    }
+  });
+});
 
 startTest();
