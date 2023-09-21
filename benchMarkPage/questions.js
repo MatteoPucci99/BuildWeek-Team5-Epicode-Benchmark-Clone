@@ -262,6 +262,7 @@ div.forEach((el) => {
       setTimeout(newQuestion, 1000);
       // newQuestion();
       timerCounter = 30;
+      newCount = 0;
       console.log("Punteggio finale: ", score);
       if (questionCounter === 10 && e.target.innerText === myAnswer) {
         localStorage.setItem("savedScore", score);
@@ -273,6 +274,7 @@ div.forEach((el) => {
       e.target.parentElement.classList.remove("hover-effect");
       setTimeout(newQuestion, 1000);
       timerCounter = 30;
+      newCount = 0;
       if (questionCounter === 10) {
         localStorage.setItem("savedScore", score);
         document.location.href = "../resultsPage/results.html";
