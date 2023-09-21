@@ -10,7 +10,7 @@ let progressStartValue = 0,
   progressEndValue = wrongAnswersPerCent,
   speed = 20;
 
-if (wrongAnswersPerCent > 60) {
+if (wrongAnswersPerCent >= 50) {
   const progress = setInterval(() => {
     progressStartValue++;
     progressValue.innerHTML = `<div class="textInsideCircle">
