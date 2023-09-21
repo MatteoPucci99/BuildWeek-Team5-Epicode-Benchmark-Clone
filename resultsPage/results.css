@@ -50,12 +50,13 @@ header img {
 }
 
 .correct {
-  font-family: "Outfit", sans-serif;
-  font-weight: 400;
-  font-size: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+  
 }
 
 .wrong {
@@ -109,11 +110,16 @@ button:hover {
   cursor: pointer;
 }
 
+
 .firstLine {
   font-weight: 700;
+  line-height: 1em;
 }
 
 .answer {
-  font-size: 0.5em;
+  font-family: "Inter", sans-serif;
+  font-size: 0.3em;
   font-weight: 200;
+  padding-top: 5px;
+  
 }

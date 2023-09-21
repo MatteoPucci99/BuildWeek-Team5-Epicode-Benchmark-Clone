@@ -145,7 +145,7 @@ const timer = () => {
       newQuestion();
     } else {
       timerCounter -= deleteOne;
-      progressValue.innerHTML = `<p class='count-down'>SECONDS</p> ${timerCounter} <p class='count-down'>REMAINING</p>`;
+      progressValue.innerHTML = `<p class='count-down'>SECONDS</p>${timerCounter} <p class='count-down'>REMAINING</p>`;
       circularProgression.style.background = `conic-gradient(hsl(180deg 100% 50%)
        ${timerCounter * 12}deg, hsl(0, 0%, 87%) 0deg)`;
     }
@@ -225,9 +225,8 @@ const newQuestion = () => {
   // SUGGERIMENTO 'PERSONALE' PER LA RISPOSTA CORRETTA PER FARE DELLE VERIFICHE
   console.log("La risposta giusta è: ", correctAnswer);
 
-  // AGGIUNGO AD OGNI DOMANDA UN +1 AL COUNTER DELLE DOMANDE
   questionCounter++;
-  counter.innerHTML = `QUESTION ${questionCounter}<span id=change>/10</span>`;
+  counter.innerHTML = `QUESTION ${questionCounter}<span id='change'>/10</span>`;
   document.getElementById("change").style.color = "rgb(178,0,136)";
 
   // TOLGO LA DOMANDA ATTUALE DAL ARRAY DI OGGETTI PER NON RIPETERE LE STESSE DOMANDE OGNI VOLTA
@@ -239,6 +238,10 @@ const newQuestion = () => {
 
   localStorage.setItem("savedScore", score);
   localStorage.setItem("savedQuestions", questionCounter);
+
+  console.log("Questo è il tuo punteggio: ", score);
+
+  console.log("Question counter: ", questionCounter);
 };
 
 // FUNZIONE PER OGNI CLICK CHE SI FERMA QUANDO questionCounter === 10
@@ -257,31 +260,19 @@ div.forEach((el) => {
       // newQuestion();
       timerCounter = 30;
       console.log("Punteggio finale: ", score);
+      if (questionCounter === 10 && e.target.innerText === myAnswer) {
+        localStorage.setItem("savedScore", score);
+        document.location.href = "../resultsPage/results.html";
+      }
     } else {
       console.log("Questo è :", e.target);
       e.target.parentElement.classList.add("wrong-answer");
       e.target.parentElement.classList.remove("hover-effect");
       setTimeout(newQuestion, 1000);
       timerCounter = 30;
-    }
-  });
-});
-
-// FUNZIONE PER IL TIMEOUT DOPO L'ULTIMA RISPOSTA PRIMA DI ACCEDERE A result.html
-const goToResult = () => {
-  document.location.href = "../results.html";
-};
-
-// FUNZIONE PER OGNI CLICK CHE SI ATTIVA QUANDO questionCounter === 10
-div.forEach((el) => {
-  el.addEventListener("click", (e) => {
-    if (questionCounter === 10 && timerCounter < 30) {
-      if (e.target.innerText === myAnswer) {
-        score++;
+      if (questionCounter === 10) {
         localStorage.setItem("savedScore", score);
-        setTimeout(goToResult, 500);
-      } else {
-        setTimeout(goToResult, 500);
+        document.location.href = "../resultsPage/results.html";
       }
     }
   });

@@ -7,10 +7,10 @@ let circularProgression = document.querySelector(".circular-progress");
 let progressValue = document.querySelector(".progress-value");
 let resulText = document.getElementsByClassName("textInsideCircle");
 let progressStartValue = 0,
-  progressEndValue = correctAnswersPerCent,
+  progressEndValue = wrongAnswersPerCent,
   speed = 20;
 
-if (correctAnswersPerCent < 60) {
+if (wrongAnswersPerCent > 60) {
   const progress = setInterval(() => {
     progressStartValue++;
     progressValue.innerHTML = `<div class="textInsideCircle">
@@ -25,9 +25,9 @@ if (correctAnswersPerCent < 60) {
        </div>
     </div>`;
 
-    circularProgression.style.background = `conic-gradient(#D20094 ${
+    circularProgression.style.background = `conic-gradient( #D20094 ${
       progressStartValue * 3.6
-    }deg, #00FFFF 0deg)`;
+    }deg, #00FFFF  0deg)`;
 
     if (progressStartValue == progressEndValue) {
       clearInterval(progress);
@@ -49,9 +49,9 @@ if (correctAnswersPerCent < 60) {
         </p>
       </div>
     </div>`;
-    circularProgression.style.background = `conic-gradient(#D20094 ${
+    circularProgression.style.background = `conic-gradient( #D20094 ${
       progressStartValue * 3.6
-    }deg, #00FFFF 0deg)`;
+    }deg, #00FFFF  0deg)`;
 
     if (progressStartValue == progressEndValue) {
       clearInterval(progress);
