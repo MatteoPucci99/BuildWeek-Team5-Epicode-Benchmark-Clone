@@ -27,7 +27,7 @@ main {
   margin-top: 100px;
 }
 i {
-  color: rgb(9, 15, 48);
+  color: rgb(23, 32, 82);
   font-size: 3em;
   margin-top: 35px;
   margin-bottom: 75px;
@@ -98,9 +98,13 @@ input:focus {
   font-size: 20px;
   font-weight: 700;
   border: 1px solid #00ffff;
-  box-shadow: 1.5px 0px 20px 1px #00ffff;
+  box-shadow: 1px 0px 14px 3px #00ffff;
+  transition: 0.3s ease-out;
   margin-top: 2.5em;
   margin-bottom: 50px;
+}
+#btnRate:hover {
+  box-shadow: 1px 0px 28px 6px #00ffff;
 }
 
 button:hover {
