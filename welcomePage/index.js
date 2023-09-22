@@ -5,6 +5,7 @@ form.addEventListener("submit", (e) => {
 
 const checkbox = document.getElementsByClassName("checkbox")[0];
 const proceed = document.getElementById("button");
+
 checkbox.addEventListener("click", function () {
   if (proceed.getAttribute("onclick") === null) {
     proceed.setAttribute(
