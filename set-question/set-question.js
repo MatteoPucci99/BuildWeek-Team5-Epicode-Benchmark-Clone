@@ -38,9 +38,11 @@ const loadingAndGo = () => {
 const container = document.getElementsByClassName("container")[0];
 const spinner = document.getElementsByClassName("spinner")[0];
 
+// Se vuoi lo spinner decommenta fino a seTimeout e commenta loadingAndGo
 const button = document.getElementById("start-button");
 button.addEventListener("click", () => {
-  container.classList.add("elements-hidden");
-  spinner.style.visibility = "visible";
-  setTimeout(loadingAndGo, 2000);
+  // container.classList.add("elements-hidden");
+  // spinner.style.visibility = "visible";
+  // setTimeout(loadingAndGo, 2000);
+  loadingAndGo();
 });
