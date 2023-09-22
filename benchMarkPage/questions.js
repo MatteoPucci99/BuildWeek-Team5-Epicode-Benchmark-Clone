@@ -812,7 +812,7 @@ const timerAnimation = () => {
 timerAnimation();
 timer();
 
-console.log(typeof numberOfQuests);
+// console.log(typeof numberOfQuests);
 
 // STARTING POINT
 // const startTest = () => {
@@ -864,9 +864,9 @@ const newQuestion = () => {
       arrayNumbers.push(parIndex);
     }
 
-    console.log(questions[randomIndex]);
-    console.log(questions);
-    console.log(randomIndex);
+    // console.log(questions[randomIndex]);
+    // console.log(questions);
+    // console.log(randomIndex);
     // CICLI FOR PER RANDOMIZZARE LE RISPOSTE DENTRO LE CASELLE
     for (let i = 0; i < questions[randomIndex].answer.length; i++) {
       for (let j = 0; j < arrayNumbers.length; j++) {
@@ -912,7 +912,7 @@ const newQuestion = () => {
   console.log("Question counter: ", questionCounter);
 };
 
-// FUNZIONE PER OGNI CLICK CHE SI FERMA QUANDO questionCounter === 10
+// FUNZIONE PER OGNI CLICK CHE SI FERMA QUANDO questionCounter === numberOfQuests
 div.forEach((el) => {
   el.addEventListener("click", (e) => {
     if (questionCounter === numberOfQuests) {
