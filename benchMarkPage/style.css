@@ -10,9 +10,14 @@ body {
   color: white;
   font-family: "Outfit", sans-serif;
   
-
+  
 }
 
+#logo {
+  width: 15vw;
+  margin-left: 5vw;
+  margin-top: 3vw;
+}
 .container {
   margin: 6vw auto;
   color: white;
@@ -97,11 +102,6 @@ button {
   letter-spacing: 2px;
 }
 
-#logo {
-  width: 15vw;
-  margin-left: 5vw;
-  margin-top: 3vw;
-}
 
 .result-container {
   display: flex;

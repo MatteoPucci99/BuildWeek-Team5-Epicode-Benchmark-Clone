@@ -2,29 +2,46 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400;700&display=swap");
 
 body {
-  margin: 0 auto;
-  background-image: url(../assets/images/bg.jpg);
-  background-size: contain;
+  background-image: url(/assets/images/provadedio2.png);
   height: 100vh;
+  width: 100vw;
+  background-size: 100vw 100vh; 
   background-repeat: no-repeat;
-  background-size: cover;
   color: white;
   font-family: "Outfit", sans-serif;
-  margin-left: 6em;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
 }
 
 h1 {
-  font-size: 3em;
+  text-align: center;
+  font-size: 3vw;
   font-weight: 300;
+  padding: 2vw;
 }
-#logo {
-  width: 15%;
-  margin-top: 2.5em;
+
+.questions-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1vw auto;
+}
+
+.mode-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1vw auto;}
+
+  #logo {
+  width: 15vw;
+  margin-left: 5vw;
+  margin-top: 3vw;
 }
 
 .title-container {
-  width: 650px;
-  margin-top: 100px;
+  margin-top: 3vw;
 }
 
 .title-container span {
@@ -37,7 +54,10 @@ h1 {
 
 input,
 label {
-  font-size: 1.5em;
+  display: block;
+  text-align: center;
+  margin:0.4vw auto;
+  font-size: 2vw;
   cursor: pointer;
 }
 
@@ -45,54 +65,49 @@ input {
   visibility: hidden;
 }
 
-.questions-container {
-  display: flex;
-  justify-content: space-evenly;
-  width: 500px;
-}
-
 .questions-container div {
-  width: 60px;
-  text-align: center;
-  padding-left: 25px;
-  border-radius: 20px;
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50px;
   cursor: pointer;
   transition: 0.5s;
 }
 
 .questions-container div:hover {
-  background-color: rgb(40, 41, 82);
+  background-color: rgba(255, 255, 255, 0.531);
 }
 
-.mode-container {
-  display: flex;
-  justify-content: space-evenly;
-  width: 500px;
-}
+.diffSelect{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 9vw;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.5s;
+    padding-right: 3vw;
+    padding-top:0.5px;
+    padding-bottom: 0.5px;}
+    
 
-.mode-container div {
-  /* width: 60px; */
-  text-align: center;
-  padding-right: 25px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: 0.5s;
-}
 
 .mode-container div:hover {
-  background-color: rgb(40, 41, 82);
+  background-color: rgba(255, 255, 255, 0.531);
   /* box-shadow: 1px 0px 14px 3px rgb(40, 41, 82); */
 }
 
 button {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 14vw;
   font-family: "Outfit", sans-serif;
-  padding: 1em 3.5em;
+  padding: 1vw;
   background-color: #00ffff;
-  font-size: 20px;
+  font-size: 1.5vw;
   font-weight: 700;
   border: 1px solid #00ffff;
-  margin-top: 5em;
-  margin-left: 7em;
+  margin-top: 5vw;
   box-shadow: 1px 0px 14px 3px #00ffff;
   transition: 0.3s ease-out;
   cursor: pointer;
@@ -105,16 +120,16 @@ button:hover {
 /* ANIMATION */
 
 .spinner {
-  height: 150px;
-  width: 150px;
+  position: absolute;
+  top: 17.5vw;
+  right: 42vw;
+  height: 15vw;
+  width: 15vw;
   border: 6px solid;
   border-color: white transparent white transparent;
   border-radius: 50%;
   animation: spin 1.3s linear infinite;
   visibility: hidden;
-  position: absolute;
-  top: 350px;
-  right: 1200px;
 }
 
 @keyframes spin {
