@@ -26,11 +26,13 @@ for (let i = 0; i < numberInputs.length; i++) {
   numberInputs[i].addEventListener("click", selectNumberOfQuests);
 }
 
+// RESET DEL FORM
 const form = document.getElementById("form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 });
 
+// FUNZIONE PROCEED BUTTON
 const loadingAndGo = () => {
   document.location.href = "../benchMarkPage/benchmark.html";
 };

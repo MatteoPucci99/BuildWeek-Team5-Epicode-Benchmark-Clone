@@ -1,3 +1,4 @@
+// INDICE ELEMENTI
 const scoreFeedback = localStorage.getItem("savedScore");
 const questionsFeedback = localStorage.getItem("savedQuestions");
 const correctAnswersPerCent = Math.round(
