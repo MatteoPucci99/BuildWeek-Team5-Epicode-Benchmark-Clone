@@ -30,7 +30,17 @@ const form = document.getElementById("form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 });
+
+const loadingAndGo = () => {
+  document.location.href = "../benchMarkPage/benchmark.html";
+};
+
+const container = document.getElementsByClassName("container")[0];
+const spinner = document.getElementsByClassName("spinner")[0];
+
 const button = document.getElementById("start-button");
 button.addEventListener("click", () => {
-  document.location.href = "../benchMarkPage/benchmark.html";
+  container.classList.add("elements-hidden");
+  spinner.style.visibility = "visible";
+  setTimeout(loadingAndGo, 2000);
 });

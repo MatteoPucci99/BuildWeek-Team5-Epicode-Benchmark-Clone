@@ -103,3 +103,26 @@ button:hover {
 }
 
 /* ANIMATION */
+
+.spinner {
+  height: 150px;
+  width: 150px;
+  border: 6px solid;
+  border-color: white transparent white transparent;
+  border-radius: 50%;
+  animation: spin 1.3s linear infinite;
+  visibility: hidden;
+  position: absolute;
+  top: 350px;
+  right: 1200px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.elements-hidden {
+  display: none;
+}
