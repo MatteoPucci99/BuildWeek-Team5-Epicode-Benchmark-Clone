@@ -2,15 +2,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 
 body {
-  width: 100%;
+  background-image: url(/assets/images/provadedio2.png);
   height: 100vh;
-  background-image: url("../assets/images/bg.jpg");
-  background-size: cover;
+  width: 100vw;
+  background-size: 100vw 100vh; 
+  background-repeat: no-repeat;
+  color: white;
 }
+
+img {
+  width: 15vw;
+  margin-left: 4vw;
+  margin-top: 2vw;
+}
+
+main {
+  margin-left: 6vw;
+}
+
 .container {
   margin: 0 auto;
-  height: 100%;
-  width: 100%;
   color: white;
   font-family: "Inter", sans-serif;
 }
@@ -19,24 +30,15 @@ body {
   width: 40%;
 }
 
+span {
+  font-weight: 700;
+}
+
 h1 {
   font-family: "Outfit", sans-serif;
   font-size: 5vw;
   padding-top: 10vh;
   padding-bottom: 1.5vh;
-}
-img {
-  width: 15%;
-  margin-left: 5vw;
-  margin-top: 2.5vw;
-}
-
-main {
-  margin-left: 5vw;
-}
-
-span {
-  font-weight: 700;
 }
 
 h2 {
@@ -57,38 +59,47 @@ ul {
   padding-top: 3em;
   padding-left: 2vw;
   line-height: 2.3vw;
-  font-size: 1.2vw;
+  font-size:1.2vw
 }
 
 section {
   display: inline-block;
 }
 
+#form{
+  display: inline-flex;
+  align-items: center;
+}
+
 #check {
   display: inline-flex;
   align-items: center;
-  padding-top: 6em;
-  margin-bottom: 5em;
-  margin-right: 12em;
+  padding-top: 5vw;
 }
 
 #check p {
-  display: inline;
-  margin-left: 1px;
+  margin-left: 0.2vw;
   padding-right: 0;
 }
-#btn {
-  float: right;
-}
+
+
 #button {
+  /* position: absolute;
+  left: 60vw; */
+  margin-left: 20vw;
   font-family: "Outfit", sans-serif;
   padding: 1em 3.5em;
   background-color: #00ffff;
-  font-size: 20px;
+  font-size: 1.3vw;
   font-weight: 700;
   border: 1px solid #00ffff;
-  box-shadow: 1px 0px 24px 6px #00ffff;
-  margin-top: 3.5em;
+  cursor: pointer;
+  box-shadow: 1px 0px 14px 3px #00ffff;
+  transition: 0.3s ease-out;
+}
+
+#button:hover {
+  box-shadow: 1px 0px 28px 6px #00ffff;
 }
 
 .checkbox {
@@ -96,27 +107,9 @@ section {
   border: 2px solid white;
   width: 12px;
   height: 16px;
-  margin: 3px 3px 3px 4px;
+  margin-right: 0.7vw;
   background: transparent;
-  position: absolute;
-  left: 60vw;
-  font-family: "Outfit", sans-serif;
-  padding: 1em 3.5em;
-  background-color: #00ffff;
-  font-size: 1.3vw;
-  font-weight: 700;
-  border: 1px solid #00ffff;
-  box-shadow: 1px 0px 24px 6px #00ffff;
 }
-
-/* #checkbox {
-    display: inline-block;
-    border: 2px solid white;S
-    width: 12px;
-    height: 16px;
-    background: transparent;
-    margin-right: 0.7vw;
-} */
 
 .clicked:focus {
   background-color: white;

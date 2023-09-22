@@ -4,15 +4,16 @@
   box-sizing: border-box;
 }
 
-body {
+/* body {
   height: 100%;
   width: 100%;
   align-items: center;
   justify-content: center;
-  background-image: url(assets/bg.jpg);
-  background-size: cover;
+  background-image: url(../assets/images/provadedio2.png);
+  background-size: 100vw 100vh; 
+  background-repeat: no-repeat;
   color: white;
-}
+} */
 
 .result-container {
   display: flex;
@@ -32,8 +33,7 @@ body {
   background: conic-gradient(#ff00d9 3.6deg, #ffffff 0deg);
   display: flex;
   align-items: center;
-  justify-content: center;
-}
+  justify-content: center;}
 
 .circular-progress::before {
   content: "";

@@ -1,7 +1,9 @@
 const scoreFeedback = localStorage.getItem("savedScore");
 const questionsFeedback = localStorage.getItem("savedQuestions");
-const correctAnswersPerCent = (scoreFeedback / questionsFeedback) * 100;
-const wrongAnswersPerCent = 100 - correctAnswersPerCent;
+const correctAnswersPerCent = Math.round(
+  (scoreFeedback / questionsFeedback) * 100
+);
+const wrongAnswersPerCent = Math.round(100 - correctAnswersPerCent);
 
 let circularProgression = document.querySelector(".circular-progress");
 let progressValue = document.querySelector(".progress-value");

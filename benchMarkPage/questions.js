@@ -783,14 +783,14 @@ const timer = () => {
   setInterval(() => {
     if (timerCounter === 0) {
       timerCounter = 30;
-      newCount = 0;
+      // newCount = 0;
       newQuestion();
     } else {
       timerCounter -= deleteOne;
-      newCount++;
+      // newCount++;
       progressValue.innerHTML = `<p class='count-down'>SECONDS</p>${timerCounter} <p class='count-down'>REMAINING</p>`;
-      circularProgression.style.background = `conic-gradient(hsl(292.12deg 20.16% 50.39%)
-       ${newCount * 12}deg, hsl(180deg, 100%, 50%) 0deg)`;
+      // circularProgression.style.background = `conic-gradient(hsl(292.12deg 20.16% 50.39%)
+      //  ${newCount * 12}deg, hsl(180deg, 100%, 50%) 0deg)`;
     }
     if (timerCounter === 0 && questionCounter === numberOfQuests) {
       goToResult();
@@ -798,9 +798,21 @@ const timer = () => {
   }, 1000);
 };
 
+const timerAnimation = () => {
+  setInterval(() => {
+    if (timerCounter === 0) {
+      newCount = 0;
+    } else {
+      newCount++;
+      circularProgression.style.background = `conic-gradient(hsl(292.12deg 20.16% 50.39%)
+      ${newCount * 0.12}deg, hsl(180deg, 100%, 50%) 0deg)`;
+    }
+  }, 10);
+};
+timerAnimation();
 timer();
 
-console.log(typeof numberOfQuests);
+// console.log(typeof numberOfQuests);
 
 // STARTING POINT
 // const startTest = () => {
@@ -852,9 +864,9 @@ const newQuestion = () => {
       arrayNumbers.push(parIndex);
     }
 
-    console.log(questions[randomIndex]);
-    console.log(questions);
-    console.log(randomIndex);
+    // console.log(questions[randomIndex]);
+    // console.log(questions);
+    // console.log(randomIndex);
     // CICLI FOR PER RANDOMIZZARE LE RISPOSTE DENTRO LE CASELLE
     for (let i = 0; i < questions[randomIndex].answer.length; i++) {
       for (let j = 0; j < arrayNumbers.length; j++) {
@@ -900,7 +912,7 @@ const newQuestion = () => {
   console.log("Question counter: ", questionCounter);
 };
 
-// FUNZIONE PER OGNI CLICK CHE SI FERMA QUANDO questionCounter === 10
+// FUNZIONE PER OGNI CLICK CHE SI FERMA QUANDO questionCounter === numberOfQuests
 div.forEach((el) => {
   el.addEventListener("click", (e) => {
     if (questionCounter === numberOfQuests) {
@@ -909,25 +921,25 @@ div.forEach((el) => {
     const target = e.target.innerText;
     if (e.target.innerText === myAnswer) {
       score++;
+      timerCounter = 30;
+      newCount = 0;
       console.log("Questo è :", e.target);
       e.target.parentElement.classList.add("correct-answer");
       e.target.parentElement.classList.remove("hover-effect");
       setTimeout(newQuestion, 1000);
       // newQuestion();
-      timerCounter = 30;
-      newCount = 0;
       console.log("Punteggio finale: ", score);
       // if (questionCounter === 10 && e.target.innerText === myAnswer) {
       //   localStorage.setItem("savedScore", score);
       //   document.location.href = "../resultsPage/results.html";
       // }
     } else {
+      timerCounter = 30;
+      newCount = 0;
       console.log("Questo è :", e.target);
       e.target.parentElement.classList.add("wrong-answer");
       e.target.parentElement.classList.remove("hover-effect");
       setTimeout(newQuestion, 1000);
-      timerCounter = 30;
-      newCount = 0;
       // if (questionCounter === 10) {
       //   localStorage.setItem("savedScore", score);
       //   document.location.href = "../resultsPage/results.html";
