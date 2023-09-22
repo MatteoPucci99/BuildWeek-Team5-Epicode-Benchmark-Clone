@@ -1,7 +1,9 @@
 const scoreFeedback = localStorage.getItem("savedScore");
 const questionsFeedback = localStorage.getItem("savedQuestions");
-const correctAnswersPerCent = (scoreFeedback / questionsFeedback) * 100;
-const wrongAnswersPerCent = 100 - correctAnswersPerCent;
+const correctAnswersPerCent = Math.round(
+  (scoreFeedback / questionsFeedback) * 100
+);
+const wrongAnswersPerCent = Math.round(100 - correctAnswersPerCent);
 
 let circularProgression = document.querySelector(".circular-progress");
 let progressValue = document.querySelector(".progress-value");
@@ -9,8 +11,13 @@ let resulText = document.getElementsByClassName("textInsideCircle");
 let progressStartValue = 0,
   progressEndValue = wrongAnswersPerCent,
   speed = 20;
+// RESET DEL FORM
+const rateUs = document.getElementById("formResult");
+rateUs.addEventListener("submit", (e) => {
+  e.preventDefault();
+});
 
-if (wrongAnswersPerCent > 60) {
+if (wrongAnswersPerCent >= 50) {
   const progress = setInterval(() => {
     progressStartValue++;
     progressValue.innerHTML = `<div class="textInsideCircle">
@@ -73,3 +80,10 @@ wrongDisplay.innerHTML = `  <p>Wrong</p>
                               questionsFeedback - scoreFeedback
                             }/${questionsFeedback} question</p>`;
 wrongDisplay.style.textAlign = "right";
+
+const goToFeedback = () => {
+  document.location.href = "../feedbackPage/feedback.html";
+};
+
+const resultButton = document.getElementById("btnRate");
+resultButton.addEventListener("click", goToFeedback);

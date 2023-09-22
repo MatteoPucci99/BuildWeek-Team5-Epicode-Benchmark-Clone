@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="set-question.css" />
+  </head>
+  <body>
+    <img src="../assets/images/epicode_logo.png" id="logo" alt="" />
+    <div class="container">
+      <form id="form">
+        <div class="title-container">
+          <h1>Choose how many questions <span>you want</span></h1>
+        </div>
+        <div class="questions-container">
+          <div>
+            <label for="1">10</label>
+            <input
+              class="numbers"
+              name="number"
+              value="10"
+              id="1"
+              type="radio"
+            />
+          </div>
+          <div>
+            <label for="6">15</label>
+            <input
+              class="numbers"
+              name="number"
+              value="15"
+              id="6"
+              type="radio"
+            />
+          </div>
+          <div>
+            <label for="11">20</label>
+            <input
+              class="numbers"
+              name="number"
+              value="20"
+              id="11"
+              type="radio"
+            />
+          </div>
+        </div>
+
+        <h1>Choose hard or easy mode</h1>
+        <div class="mode-container">
+          <div>
+            <input
+              class="mode"
+              name="mode"
+              id="easy"
+              value="easy"
+              type="radio"
+            />
+            <label for="easy">Easy</label>
+          </div>
+          <div>
+            <input
+              class="mode"
+              name="mode"
+              id="medium"
+              value="medium"
+              type="radio"
+            />
+            <label for="medium">Medium</label>
+          </div>
+          <div>
+            <input
+              class="mode"
+              name="mode"
+              id="hard"
+              value="hard"
+              type="radio"
+            />
+            <label for="hard">Hard</label>
+          </div>
+        </div>
+
+        <button id="start-button">START</button>
+      </form>
+    </div>
+
+    <script src="set-question.js"></script>
+  </body>
+</html>

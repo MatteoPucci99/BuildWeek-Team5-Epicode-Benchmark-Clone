@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400;700&display=swap");
+
+body {
+  margin: 0 auto;
+  background-image: url(../assets/images/bg.jpg);
+  background-size: contain;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  font-family: "Outfit", sans-serif;
+  margin-left: 6em;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: 300;
+}
+#logo {
+  width: 15%;
+  margin-top: 2.5em;
+}
+
+.title-container {
+  width: 650px;
+  margin-top: 100px;
+}
+
+.title-container span {
+  font-weight: 700;
+}
+
+input,
+label {
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+input {
+  visibility: hidden;
+}
+
+.questions-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 500px;
+}
+
+.questions-container div {
+  width: 60px;
+  text-align: center;
+  padding-left: 25px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.questions-container div:hover {
+  background-color: rgb(40, 41, 82);
+}
+
+.mode-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 500px;
+}
+
+.mode-container div {
+  /* width: 60px; */
+  text-align: center;
+  padding-right: 25px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.mode-container div:hover {
+  background-color: rgb(40, 41, 82);
+  /* box-shadow: 1px 0px 14px 3px rgb(40, 41, 82); */
+}
+
+button {
+  font-family: "Outfit", sans-serif;
+  padding: 1em 3.5em;
+  background-color: #00ffff;
+  font-size: 20px;
+  font-weight: 700;
+  border: 1px solid #00ffff;
+  margin-top: 5em;
+  margin-left: 7em;
+  box-shadow: 1px 0px 14px 3px #00ffff;
+  transition: 0.3s ease-out;
+  cursor: pointer;
+}
+
+button:hover {
+  box-shadow: 1px 0px 28px 6px #00ffff;
+}
+
+/* ANIMATION */
